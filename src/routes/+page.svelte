@@ -1,11 +1,16 @@
-<script>
+<script lang="ts">
 	import Project from "$lib/components/project.svelte";
+	import type { PageData } from "./$types";
 
-	const count = Array.from({ length: 5 });
+	let { data }: { data: PageData } = $props();
 </script>
 
 <div class="flex gap-4">
-	{#each count}
-		<Project />
+	{#each data.projects as project}
+		<Project {...project} />
 	{/each}
 </div>
+
+<br />
+
+<p>{JSON.stringify(data)}</p>
