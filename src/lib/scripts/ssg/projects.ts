@@ -1,3 +1,5 @@
+import { getDirName, getFileName } from "./helper";
+import { getImages, getMarkdown, getMarkdownList } from "./importer";
 import type {
 	Glob,
 	ProjectContent,
@@ -6,80 +8,45 @@ import type {
 } from "./types";
 
 export function getProjectList(): ProjectData[] {
-	const projects = import.meta.glob<ProjectContent>(
-		"/src/lib/data/projects/**/*.md",
-		{
-			eager: true,
-		}
-	);
-
+	const projects = getMarkdownList();
 	return parseGlobs(projects);
 }
 
 function parseGlobs(projects: Record<string, ProjectContent>): ProjectData[] {
-	return Object.entries(projects).map(([path, record]) =>
-		parseData(path, record)
-	);
-}
+	let result: ProjectData[] = [];
 
-function parseData(path: string, project: ProjectContent): ProjectData {
-	const id = getFileName(path, { ".md": "" });
-	const metadata = project.metadata satisfies ProjectMetadata;
-
-	if (id === undefined) {
-		throw new Error(`${path} is an invalid project.`);
+	for (const [id, record] of Object.entries(projects)) {
+		result.push(parseData(id, record));
 	}
 
-	return {
-		...metadata,
-		images: resolveImages(id),
-		href: `/projects/${id}`,
-	} satisfies ProjectData;
-}
-
-function resolveImages(id: string): string[] {
-	const images = import.meta.glob<Glob<any>>(
-		"/src/lib/data/projects/**/*.{png,jpeg,jpg,webp,gif,tiff,bmp,raw}",
-		{ eager: true }
-	);
-
-	let result: string[] = [];
-	for (const [path, glob] of Object.entries(images)) {
-		const dirPath = path.substring(0, path.lastIndexOf("/"));
-		const dir = dirPath.substring(dirPath.lastIndexOf("/") + 1);
-
-		if (dir === id) {
-			result.push(glob.default);
+	result.sort((a, b) => {
+		if (a.pinned !== b.pinned) {
+			return a.pinned ? -1 : 1;
 		}
-	}
+
+		return b.date.getTime() - a.date.getTime();
+	});
 
 	return result;
 }
 
-export async function getProject(id: string): Promise<ProjectContent> {
-	const file = await import(`../../data/projects/${id}/${id}.md`);
+function parseData(id: string, project: ProjectContent): ProjectData {
+	const metadata = project.metadata as ProjectMetadata;
+
+	if (metadata === undefined) {
+		throw new Error(
+			`Metadata for ${id} is undefined. Make sure any lists are indented with spaces.`
+		);
+	}
 
 	return {
-		metadata: file.metadata,
-		content: file.default,
-	};
+		...metadata,
+		date: new Date(metadata.date),
+		images: getImages(id),
+		href: `/projects/${id}`,
+	} satisfies ProjectData;
 }
 
-function getFileName(
-	path: string,
-	replaceExtensions?: Record<string, string>
-): string {
-	let name = path.split("/").at(-1);
-
-	if (name === undefined) {
-		throw new Error("File name undefined for path " + path);
-	}
-
-	if (replaceExtensions !== undefined) {
-		for (const [from, to] of Object.entries(replaceExtensions)) {
-			name = name.replaceAll(from, to);
-		}
-	}
-
-	return name;
+export function getProject(id: string): ProjectContent {
+	return getMarkdown(id);
 }

@@ -5,5 +5,5 @@ import { getProject } from "$lib/scripts/ssg/projects";
 
 export const load: PageLoad = async ({ params }) => {
 	const id: string = params.slug;
-	return await getProject(id);
+	return getProject(id);
 };

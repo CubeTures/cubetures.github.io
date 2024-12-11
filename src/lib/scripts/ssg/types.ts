@@ -1,3 +1,8 @@
+export interface ProjectContentGlob {
+	metadata: any;
+	default: any;
+}
+
 export interface ProjectContent {
 	metadata: any;
 	content: any;
@@ -8,10 +13,11 @@ export interface ProjectMetadata {
 	desc: string;
 	date: Date;
 	tags: string[];
+	pinned?: boolean;
 }
 
 export interface ProjectData extends ProjectMetadata {
-	images: string[];
+	images: Record<string, any>;
 	href: string;
 }
 
