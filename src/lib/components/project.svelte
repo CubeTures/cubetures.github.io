@@ -1,13 +1,8 @@
 <script lang="ts">
 	import * as Card from "$lib/components/ui/card/index";
+	import type { ProjectData } from "$lib/scripts/ssg/types";
 
-	interface Props {
-		name: string;
-		desc: string;
-		page: string;
-	}
-
-	const { name, desc, page }: Props = $props();
+	const { name, desc, images, tags, href }: ProjectData = $props();
 </script>
 
 <Card.Root>
@@ -16,9 +11,14 @@
 		<Card.Description>{desc}</Card.Description>
 	</Card.Header>
 	<Card.Content>
-		<p>Content?</p>
+		{#each images as image}
+			<img
+				src={image}
+				alt={`${name} screenshot`}
+			/>
+		{/each}
 	</Card.Content>
 	<Card.Footer>
-		<a href={page}>Read more</a>
+		<a {href}>Read more</a>
 	</Card.Footer>
 </Card.Root>

@@ -5,12 +5,13 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
-<div class="flex gap-4">
+<!-- Header -->
+<!-- Experience -->
+<!-- Projects -->
+<!-- Skills -->
+
+<div class="flex flex-wrap gap-4">
 	{#each data.projects as project}
 		<Project {...project} />
 	{/each}
 </div>
-
-<br />
-
-<p>{JSON.stringify(data)}</p>

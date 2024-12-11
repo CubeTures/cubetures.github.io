@@ -1,3 +1,12 @@
+---
+name: Example
+desc: An example project for testing my static site generation.
+date: "12-10-2024"
+tags:
+    - markdown
+    - svelte
+---
+
 <script>
 	import Example from "$lib/components/example.svelte";
 </script>
