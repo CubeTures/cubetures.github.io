@@ -13,6 +13,8 @@ libraries:
     - unovis
 tools:
     - git
+github: "https://github.com/owenshadburne"
+live: "https://www.example.com"
 ---
 
 <script>

@@ -6,10 +6,7 @@
 -   Summary
 -   Projects
     -   Category
-    -   Tags
     -   Links
-    -   Color
-        -   linear-gradient(135deg, #d946ef80 10%, #0000 0, #0000 50%, #d946ef80 0, #d946ef80 60%, #0000 0, #0000);
 -   Experience
     -   How to frame?
 
@@ -37,5 +34,6 @@
     -   Grow on hover
     -   Roll and pitch on mouse move
     -   Colorful on hover
+    -   linear-gradient(135deg, #d946ef80 10%, #0000 0, #0000 50%, #d946ef80 0, #d946ef80 60%, #0000 0, #0000);
 -   Timeline
     -   An intractable timeline with all projects, experience, and blog posts

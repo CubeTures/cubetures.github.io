@@ -13,7 +13,8 @@ export type ProjectMetadata = {
 	desc: string;
 	date: Date;
 	pinned?: boolean;
-} & Tags;
+} & Tags &
+	Links;
 
 export interface ProjectData extends ProjectMetadata {
 	images: Record<string, any>;
@@ -51,4 +52,9 @@ export interface Tags {
 
 	// git, docker, vscode
 	tools?: string[];
+}
+
+export interface Links {
+	github?: string;
+	live?: string;
 }
