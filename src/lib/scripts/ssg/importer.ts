@@ -8,14 +8,14 @@ function importMarkdown() {
 	if (markdown === undefined) {
 		markdown = {};
 		const projects = import.meta.glob<ProjectContentGlob>(
-			"/src/lib/data/projects/**/*.md",
+			"/src/lib/data/projects/**/*.{svx, md}",
 			{
 				eager: true,
 			}
 		);
 
 		for (const [path, project] of Object.entries(projects)) {
-			const id = getFileName(path, { ".md": "" });
+			const id = getFileName(path, { ".md": "", ".svx": "" });
 			markdown[id] = {
 				metadata: project.metadata,
 				content: project.default,
@@ -61,7 +61,9 @@ export function getMarkdown(id: string): ProjectContent {
 	if (markdown === undefined) {
 		throw new Error(`Error with importing markdown list`);
 	} else if (markdown[id] === undefined) {
-		console.warn(`Error with importing markdown file ${id} (it may be an image preloading)`);
+		console.warn(
+			`Error with importing markdown file ${id} (it may be an image preloading)`
+		);
 		return {
 			metadata: {},
 			content: () => {},
@@ -96,8 +98,8 @@ export function getImage(id: string, name: string): any {
 			`Error with importing images for ${id} (or no images exist)`
 		);
 		return undefined;
-	} else if(images[id][name] === undefined) {
-		console.warn(`Error with importing image ${name} for ${id}`)
+	} else if (images[id][name] === undefined) {
+		console.warn(`Error with importing image ${name} for ${id}`);
 	}
 
 	return images[id][name];

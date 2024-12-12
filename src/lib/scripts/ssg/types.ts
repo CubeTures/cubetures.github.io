@@ -8,13 +8,12 @@ export interface ProjectContent {
 	content: any;
 }
 
-export interface ProjectMetadata {
+export type ProjectMetadata = {
 	name: string;
 	desc: string;
 	date: Date;
-	tags: string[];
 	pinned?: boolean;
-}
+} & Tags;
 
 export interface ProjectData extends ProjectMetadata {
 	images: Record<string, any>;
@@ -23,4 +22,33 @@ export interface ProjectData extends ProjectMetadata {
 
 export interface Glob<T> {
 	default: T;
+}
+
+export interface Tags {
+	/**
+	 * 	Software
+	 * 		Other
+	 * 		Game
+	 *		Full Stack
+	 *			Web
+	 *			Desktop
+	 *			Mobile
+	 *			Cloud
+	 */
+	category: "web" | "mobile" | "desktop" | "cloud" | "game" | "other";
+
+	// java, go, haskell
+	languages?: string[];
+
+	// react, svelte
+	frameworks?: string[];
+
+	// unovis, numpy
+	libraries?: string[];
+
+	// aws, firebase, linux
+	platforms?: string[];
+
+	// git, docker, vscode
+	tools?: string[];
 }

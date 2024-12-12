@@ -4,7 +4,7 @@ import { mdsvex } from "mdsvex";
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-	extensions: [".md"],
+	extensions: [".svx", ".md"],
 	layout: "/src/lib/components/markdown/layout.svelte",
 };
 

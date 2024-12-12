@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ProjectCard from "$lib/components/projectCard.svelte";
+	import ProjectList from "$lib/components/projectList.svelte";
+	import Summary from "$lib/components/summary.svelte";
 	import type { PageData } from "./$types";
 
 	let { data }: { data: PageData } = $props();
@@ -9,9 +10,11 @@
 <!-- Experience -->
 <!-- Projects -->
 <!-- Skills -->
+<!-- Links -->
 
-<div class="flex flex-wrap gap-4">
-	{#each data.projects as project}
-		<ProjectCard {...project} />
-	{/each}
-</div>
+<Summary />
+
+<ProjectList
+	projects={data.projects}
+	limit={6}
+/>
