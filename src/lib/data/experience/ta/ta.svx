@@ -8,6 +8,8 @@ desc:
     - Bullet 2
 color: red
 category: other
+languages:
+    - C++
 ---
 
 # Teaching Assistant

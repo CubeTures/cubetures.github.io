@@ -30,13 +30,30 @@
 
 {#snippet Date()}
 	<div class="self-end text-xl font-normal relative ml-6">
-		<p class="text-right underline decoration-primary">
+		<p class="text-right border-b-2 border-b-primary pl-2">
 			{readableDate(start)} - {end ? readableDate(end) : "Present"}
 		</p>
 		<div
-			class="absolute border-b border-b-2 border-b-primary w-14 -right-[3.1rem] bottom-[2.5px]"
+			class="absolute border-b border-b-2 border-b-primary w-14 -right-[3.1rem] bottom-0"
 		></div>
 	</div>
+{/snippet}
+
+{#snippet Title()}
+	{#if read}
+		<a
+			{href}
+			class="grow self-start text-left"
+		>
+			<p>
+				{position}
+			</p>
+		</a>
+	{:else}
+		<p class="grow self-start text-left">
+			{position}
+		</p>
+	{/if}
 {/snippet}
 
 {#snippet Desc()}
@@ -51,20 +68,6 @@
 	{/if}
 {/snippet}
 
-{#snippet Title()}
-	{#if read}
-		<a {href}>
-			<p class="grow text-left">
-				{position}
-			</p>
-		</a>
-	{:else}
-		<p class="grow text-left">
-			{position}
-		</p>
-	{/if}
-{/snippet}
-
 <div class="flex gap-6">
 	<Card.Root class="grow tilter {color}">
 		<Card.Header
@@ -74,9 +77,7 @@
 				{@render Date()}
 				{@render Title()}
 			</Card.Title>
-			<Card.Description class="mt-0"
-				>{company} - {location}</Card.Description
-			>
+			<Card.Description>{company} - {location}</Card.Description>
 		</Card.Header>
 		<Card.Content>
 			{@render Desc()}

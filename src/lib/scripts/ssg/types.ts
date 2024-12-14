@@ -53,14 +53,7 @@ export interface Tags {
 	 *			Mobile
 	 *			Cloud
 	 */
-	category:
-		| "full-stack"
-		| "web"
-		| "mobile"
-		| "desktop"
-		| "cloud"
-		| "game"
-		| "other";
+	category: Omit<Category, "software">;
 
 	// java, go, haskell
 	languages?: string[];
@@ -76,7 +69,20 @@ export interface Tags {
 
 	// git, docker, vscode
 	tools?: string[];
+
+	// anything that doesn't fall into the above; soft skills
+	other?: string[];
 }
+
+export type Category =
+	| "software"
+	| "full-stack"
+	| "web"
+	| "mobile"
+	| "desktop"
+	| "cloud"
+	| "game"
+	| "other";
 
 export interface ProjectLinks {
 	github?: string;

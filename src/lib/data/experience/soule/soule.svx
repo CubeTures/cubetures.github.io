@@ -9,7 +9,7 @@ desc:
     - Bullet 2
     - Bullet 3
     - Bullet 4
-color: sky
+color: fuchsia
 
 category: "full-stack"
 languages:

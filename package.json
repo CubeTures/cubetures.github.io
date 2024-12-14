@@ -7,8 +7,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"bpt": "npm run build && npm run preview",
-		"copy": "npm run copy && xcopy build-files build /E /I /Y",
-		"deploy": "gh-pages -d build/",
+		"copy": "xcopy build-files build /E /I /Y",
+		"deploy": "npm run copy && gh-pages -d build/",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
@@ -23,6 +23,7 @@
 		"bits-ui": "^1.0.0-next.71",
 		"clsx": "^2.1.1",
 		"gh-pages": "^6.2.0",
+		"lucide-svelte": "^0.468.0",
 		"mdsvex": "^0.12.3",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",

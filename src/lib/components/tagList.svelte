@@ -15,7 +15,7 @@
 <div class="flex flex-wrap gap-4">
 	<Tag
 		type="category"
-		tag={category}
+		tag={category as string}
 	/>
 
 	{#if languages}

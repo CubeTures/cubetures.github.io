@@ -4,37 +4,33 @@
 
 ## Priority 1
 
--   Header
 -   Summary
 -   Skills
 -   Links
     -   Github(s)
     -   Linkedin
--   Options to disable visiting markdown pages for now
--   Vanilla-Tilt not binding properly when page is reloaded through back
 
 ## Priority 2
 
 -   Sorting / filtering system
 -   Fragment system for auto filtering
--   Tooltips
-    -   Live
-    -   Github
+-   On smaller devices, tags are limited and can be expanded with a "view more"
+-   Add more color tinting
+    -   When a color glows, shift the hue of all the other style elements (background, middleground, border) for every element to match that color's hue
 
-# Ideas
+# Links
 
--   In my summary, have a dropdown on `I am a __ developer.`
-    -   How to make it obvious to change the toggle?
-    -   Software
-        -   Full Stack
-            -   Web
-            -   Mobile
-            -   Cloud
-        -   Game
+-   [markdown blog tutorial](https://joyofcode.xyz/sveltekit-markdown-blog#posts-api-endpoint)
+-   [icons](https://icon-sets.iconify.design/mdi/)
+-   [typography](https://github.com/tailwindlabs/tailwindcss-typography)
+-   [typewriter](https://github.com/tameemsafi/typewriterjs)
+-   [screen ripple A](https://gist.github.com/RealMrHex/3ce4df2b95cb1fde57cd220cea3f825f)
+-   [screen ripple B](https://github.com/luncheon/ripplet.js)
 
 # Stretch
 
 -   Better responsive design
+-   Vanilla-Tilt not binding properly when page is reloaded through back
 -   Blog
     -   Posts about
 -   Cool card animations
