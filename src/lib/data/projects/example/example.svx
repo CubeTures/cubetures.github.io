@@ -6,14 +6,14 @@ desc: An example project for testing my static site generation.
 date: "12-10-2024"
 category: web
 languages:
-    - go
-    - typescript
+    - Go
+    - TypeScript
 frameworks:
-    - svelte
+    - Svelte
 libraries:
-    - unovis
+    - Unovis
 tools:
-    - git
+    - Git
 github: "https://github.com/owenshadburne"
 live: "https://www.example.com"
 color: rose

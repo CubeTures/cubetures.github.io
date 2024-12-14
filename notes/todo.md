@@ -4,6 +4,7 @@
 
 ## Priority 1
 
+-   Logo
 -   Summary
 -   Skills
 -   Links
@@ -12,7 +13,10 @@
 
 ## Priority 2
 
+-   Metadata for pages
 -   Sorting / filtering system
+    -   Highlight tags that are selected
+    -   Popup that is just the skills section
 -   Fragment system for auto filtering
 -   On smaller devices, tags are limited and can be expanded with a "view more"
 -   Add more color tinting

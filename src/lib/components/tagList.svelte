@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Tags } from "$lib/scripts/ssg/types";
-	import Tag from "./tag.svelte";
+	import NumeratedTagList from "./numeratedTagList.svelte";
 
 	const {
 		category,
@@ -9,57 +9,33 @@
 		libraries,
 		platforms,
 		tools,
-	}: Tags = $props();
+		other,
+		labeled,
+	}: Partial<Tags> & {
+		labeled?: boolean;
+	} = $props();
+
+	let cat: Record<string, number> = {};
+	if (category) {
+		cat[category as string] = 0;
+	}
+
+	function trans(list?: string[]): Record<string, number> {
+		if (list === undefined) {
+			return {};
+		}
+
+		return Object.fromEntries(list.map((key) => [key, 0]));
+	}
 </script>
 
-<div class="flex flex-wrap gap-4">
-	<Tag
-		type="category"
-		tag={category as string}
-	/>
-
-	{#if languages}
-		{#each languages as language}
-			<Tag
-				type="languages"
-				tag={language}
-			/>
-		{/each}
-	{/if}
-
-	{#if frameworks}
-		{#each frameworks as framework}
-			<Tag
-				type="frameworks"
-				tag={framework}
-			/>
-		{/each}
-	{/if}
-
-	{#if libraries}
-		{#each libraries as library}
-			<Tag
-				type="libraries"
-				tag={library}
-			/>
-		{/each}
-	{/if}
-
-	{#if platforms}
-		{#each platforms as platform}
-			<Tag
-				type="platforms"
-				tag={platform}
-			/>
-		{/each}
-	{/if}
-
-	{#if tools}
-		{#each tools as tool}
-			<Tag
-				type="tools"
-				tag={tool}
-			/>
-		{/each}
-	{/if}
-</div>
+<NumeratedTagList
+	category={cat}
+	languages={trans(languages)}
+	frameworks={trans(frameworks)}
+	libraries={trans(libraries)}
+	platforms={trans(platforms)}
+	tools={trans(tools)}
+	other={trans(other)}
+	{labeled}
+/>

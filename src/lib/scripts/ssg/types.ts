@@ -53,7 +53,7 @@ export interface Tags {
 	 *			Mobile
 	 *			Cloud
 	 */
-	category: Omit<Category, "software">;
+	category: Exclude<Category, "software">;
 
 	// java, go, haskell
 	languages?: string[];
@@ -72,6 +72,16 @@ export interface Tags {
 
 	// anything that doesn't fall into the above; soft skills
 	other?: string[];
+}
+
+export interface NumeratedTags {
+	category?: Record<string, number>;
+	languages?: Record<string, number>;
+	frameworks?: Record<string, number>;
+	libraries?: Record<string, number>;
+	platforms?: Record<string, number>;
+	tools?: Record<string, number>;
+	other?: Record<string, number>;
 }
 
 export type Category =

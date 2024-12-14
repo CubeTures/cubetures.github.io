@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ExperienceList from "$lib/components/experienceList.svelte";
 	import ProjectList from "$lib/components/projectList.svelte";
+	import SkillList from "$lib/components/skillList.svelte";
 	import Summary from "$lib/components/summary.svelte";
 	import { generateAll } from "$lib/scripts/colors/generate";
 	import type { PageData } from "./$types";
@@ -32,3 +33,6 @@
 	projects={data.projects}
 	limit={6}
 />
+
+{@render Header("Skills")}
+<SkillList {data}/>
