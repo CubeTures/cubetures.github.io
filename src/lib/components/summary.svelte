@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as Select from "$lib/components/ui/select/index.js";
+	import { summaries } from "$lib/data/summary";
 	import { filters } from "$lib/hooks/state.svelte";
 	import type { Category } from "$lib/scripts/ssg/types";
 
@@ -40,7 +41,7 @@
 
 	const triggerContent = $derived.by(() => {
 		if (filters.category === "other") {
-			return "Engineer";
+			return "Engineer.";
 		}
 
 		const header = options.find(
@@ -86,9 +87,15 @@
 {/snippet}
 
 <div class="flex flex-col gap-4">
-	<h1 class="text-5xl font-semibold text-primary" style="transition: color var(--transition)">Owen Shadburne</h1>
+	<h1
+		class="text-5xl font-semibold text-primary"
+		style="transition: color var(--transition)"
+	>
+		Owen Shadburne
+	</h1>
 	<p class="text-2xl">
 		I'm a{filters.category === "other" ? "n" : ""}
 		{@render Choice()}
 	</p>
+	<p class="text-lg">{summaries[filters.category]}</p>
 </div>

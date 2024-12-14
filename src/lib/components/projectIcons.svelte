@@ -33,7 +33,7 @@
 		{/if}
 	{/snippet}
 
-	<div class="float-right flex align-center justify-end gap-2 ml-6">
+	<div class="flex align-center justify-end gap-2 ml-6">
 		{@render tooltip("mdi:access-point", "View the live project", live)}
 		{@render tooltip(
 			"mdi:github",
@@ -42,7 +42,7 @@
 		)}
 	</div>
 {:else}
-	<div class="float-right flex align-center justify-end gap-2 ml-6">
+	<div class="flex align-center justify-end gap-2 ml-6">
 		{#if live}
 			<a href={live}>
 				<Icon

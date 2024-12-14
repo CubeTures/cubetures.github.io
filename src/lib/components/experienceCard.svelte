@@ -45,9 +45,7 @@
 			{href}
 			class="grow self-start text-left"
 		>
-			<p>
-				{position}
-			</p>
+			{position}
 		</a>
 	{:else}
 		<p class="grow self-start text-left">

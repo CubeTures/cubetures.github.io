@@ -16,8 +16,6 @@
 	<h2 class="text-4xl font-medium underline decoration-primary">{text}</h2>
 {/snippet}
 
-<!-- Header -->
-<!-- Skills -->
 <!-- Links -->
 
 <Summary />

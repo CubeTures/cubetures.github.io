@@ -8,35 +8,35 @@ export interface MarkdownContent {
 	content: any;
 }
 
-export type ExperienceMetadata = {
+export interface MarkdownMetadata {
+	color: string;
+	visible?: boolean;
+}
+
+export interface ExperienceMetadata extends MarkdownMetadata, Tags {
 	start: Date;
 	end?: Date;
 	position: string;
 	company: string;
 	location: string;
 	desc: string[];
-	color: string;
-	visible?: boolean;
-} & Tags;
+}
 
-export type ExperienceData = {
+export interface ExperienceData extends ExperienceMetadata {
 	href: string;
-} & ExperienceMetadata;
+}
 
-export type ProjectMetadata = {
+export interface ProjectMetadata extends MarkdownMetadata, Tags, ProjectLinks {
 	name: string;
 	desc: string;
 	date: Date;
-	color: string;
 	pinned?: boolean;
-	visible?: boolean;
-} & Tags &
-	ProjectLinks;
+}
 
-export type ProjectData = {
+export interface ProjectData extends ProjectMetadata {
 	images: Record<string, any>;
 	href: string;
-} & ProjectMetadata;
+}
 
 export interface Glob<T> {
 	default: T;

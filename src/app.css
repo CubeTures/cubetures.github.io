@@ -112,3 +112,17 @@ body * {
 	border-bottom-left-radius: inherit;
 	border-bottom-right-radius: inherit;
 }
+/* 
+.badge {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: -0.5rem;
+	right: -0.5rem;
+	transition: all var(--transition);
+}
+
+.tag:hover .badge {
+	opacity: 100%;
+	visibility: visible;
+} */

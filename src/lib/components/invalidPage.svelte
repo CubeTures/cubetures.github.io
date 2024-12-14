@@ -19,7 +19,7 @@
 	<h1 class="text-2xl font-bold">Oops!</h1>
 	<br />
 	<p>This page does not exist.</p>
-	<p>(I have no {singular[group]} called "{id}".)</p>
+	<!-- <p>(I have no {singular[group]} called "{id}".)</p> -->
 	<p>
 		Go back or return to the <a
 			href="/"

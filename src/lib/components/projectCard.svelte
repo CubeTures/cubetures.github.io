@@ -65,16 +65,18 @@
 	<Card.Header
 		class="bg-middleground border-b-border border-b-solid border-b pb-6 elevated-{elevation} rounded-lg rounded-b-none "
 	>
-		<Card.Title>
+		<Card.Title class="flex flex-row-reverse flex-wrap justify-between">
 			<ProjectIcons
 				{live}
 				{github}
 			/>
-			{#if read}
+			<div class="grow self-start text-left">
+				{#if read}
 				<a {href}>{name}</a>
 			{:else}
 				{name}
 			{/if}
+			</div>
 		</Card.Title>
 		<Card.Description>{desc}</Card.Description>
 	</Card.Header>

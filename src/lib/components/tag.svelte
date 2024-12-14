@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/ui/badge/index.js";
+	import * as Tooltip from "$lib/components/ui/tooltip/index";
 	import { capitalize } from "$lib/scripts/helper";
 	import type { Tags } from "$lib/scripts/ssg/types";
 
@@ -12,14 +12,29 @@
 	const { type = "none", tag, count }: Props = $props();
 </script>
 
-<div
-	class="border bg-middleground rounded-lg p-2 px-3 flex flex gap-2 relative"
->
-	{capitalize(tag)}
-	{#if count && count > 0}
-		<Badge
-			class="self-center"
-			style="transition: all var(--transition)">{count}</Badge
-		>
-	{/if}
-</div>
+{#if count && count > 0}
+	{@render tip()}
+{:else}
+	{@render inner()}
+{/if}
+
+{#snippet inner()}
+	<div
+		class="border bg-middleground rounded-lg p-2 px-3 flex flex gap-2 relative tag"
+	>
+		{capitalize(tag)}
+	</div>
+{/snippet}
+
+{#snippet tip()}
+	<Tooltip.Provider>
+		<Tooltip.Root delayDuration={0}>
+			<Tooltip.Trigger>
+				{@render inner()}
+			</Tooltip.Trigger>
+			<Tooltip.Content>
+				<p>Used <span class="text-primary font-bold">{count}</span> time{count === 1 ? "" : "s"}</p>
+			</Tooltip.Content>
+		</Tooltip.Root>
+	</Tooltip.Provider>
+{/snippet}

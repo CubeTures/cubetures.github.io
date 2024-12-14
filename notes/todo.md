@@ -5,8 +5,8 @@
 ## Priority 1
 
 -   Logo
--   Summary
 -   Skills
+    -   Inject skills (do after all write-ups to see if this is necessary)
 -   Links
     -   Github(s)
     -   Linkedin
@@ -35,12 +35,7 @@
 
 -   Better responsive design
 -   Vanilla-Tilt not binding properly when page is reloaded through back
--   Blog
-    -   Posts about
--   Cool card animations
-    -   Grow on hover
-    -   Roll and pitch on mouse move
-    -   Colorful on hover
-    -   linear-gradient(135deg, #d946ef80 10%, #0000 0, #0000 50%, #d946ef80 0, #d946ef80 60%, #0000 0, #0000);
+-   Highlights
+    -   Posts about events or projects significant, but not significant enough to be on projects / experience list
 -   Timeline
-    -   An intractable timeline with all projects, experience, and blog posts
+    -   An intractable timeline with all projects, experience, and highlights posts

@@ -36,10 +36,12 @@
 				for (const [key, values] of Object.entries(entry)) {
 					if (key == section) {
 						for (const value of values) {
-							if(result[value]) {
-								result[value] += 1;
+							const v = entry.visible === false ? 0 : 1;
+
+							if (result[value]) {
+								result[value] += v;
 							} else {
-								result[value] = 1;
+								result[value] = v;
 							}
 						}
 					}
@@ -49,8 +51,6 @@
 
 		return result;
 	}
-
-	console.log(calculated);
 </script>
 
 <NumeratedTagList
