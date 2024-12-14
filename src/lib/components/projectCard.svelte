@@ -1,9 +1,10 @@
 <script lang="ts">
 	import * as Card from "$lib/components/ui/card/index";
 	import type { ProjectData } from "$lib/scripts/ssg/types";
-	import Icon from "@iconify/svelte";
+	import ProjectIcons from "./projectIcons.svelte";
 	import TagList from "./tagList.svelte";
 	import _ from "vanilla-tilt";
+	import { settings } from "$lib/scripts/ssg/settings";
 
 	const {
 		name,
@@ -14,64 +15,73 @@
 		href,
 		github,
 		live,
+		color,
 		...tags
 	}: ProjectData = $props();
 
 	const thumbnail = Object.values(images)[0];
+
+	const tilt = settings.projects.tilt;
+	const read = settings.projects.markdownLinks;
+
+	const tiltOptions = tilt
+		? {
+				"data-tilt": true,
+				"data-tilt-max": "5",
+				"data-tilt-speed": "300",
+				"data-tilt-perspective": "1000",
+				"data-tilt-scale": "1.05",
+				"data-tilt-easing": "cubic-bezier(.15,.54,.31,.91)",
+			}
+		: {};
+	const elevation = tilt ? "elevation-md" : "";
+	const header = tilt ? "card-header" : "";
 </script>
 
-{#snippet Icons()}
-	<div class="float-right flex align-center justify-end gap-2">
-		{#if live}
-			<a href={live}>
-				<Icon
-					icon="mdi:access-point"
-					width="24"
-					height="24"
-				/>
-			</a>
-		{/if}
-		{#if github}
-			<a href={github}>
-				<Icon
-					icon="mdi:github"
-					width="24"
-					height="24"
-				/>
-			</a>
-		{/if}
-	</div>
-{/snippet}
-
 {#snippet Images()}
-	<div class="w-full">
-		<img
-			class="w-full max-h-48 md:max-h-64 object-contain rounded-lg"
-			src={thumbnail}
-			alt={`${name} screenshot`}
-		/>
-	</div>
+	{#if read}
+		<a
+			class="w-full"
+			{href}
+		>
+			<img
+				class="w-full max-h-48 md:max-h-64 object-contain rounded-lg"
+				src={thumbnail}
+				alt={`${name} screenshot`}
+			/>
+		</a>
+	{/if}
+	<img
+		class="w-full max-h-48 md:max-h-64 object-contain rounded-lg"
+		src={thumbnail}
+		alt={`${name} screenshot`}
+	/>
 {/snippet}
 
 <Card.Root
-	class="w-full grid grid-rows-subgrid row-span-3 hover:z-50 tilter {name == "Example" ? "rose" : "fuchsia"}"
-	data-tilt
-	data-tilt-max="5"
-	data-tilt-speed="300"
-	data-tilt-perspective="1000"
-	data-tilt-scale="1.05"
-	data-tilt-easing="cubic-bezier(.15,.54,.31,.91)"
+	class="w-full grid grid-rows-subgrid row-span-3 hover:z-50 tilter {color} {header}"
+	{...tiltOptions}
 >
 	<Card.Header
-		class="bg-middleground border-b-border border-b-solid border-b pb-6 elevated-md rounded-lg rounded-b-none card-header"
+		class="bg-middleground border-b-border border-b-solid border-b pb-6 elevated-{elevation} rounded-lg rounded-b-none "
 	>
-		<Card.Title>{name}<Icons /></Card.Title>
+		<Card.Title>
+			<ProjectIcons
+				{live}
+				{github}
+			/>
+			{#if read}
+				<a {href}>{name}</a>
+			{:else}
+				{name}
+			{/if}
+		</Card.Title>
 		<Card.Description>{desc}</Card.Description>
 	</Card.Header>
-	<Card.Content class="flex items-center elevated-md">
+	<Card.Content class="flex items-center elevated-{elevation}">
 		<Images />
 	</Card.Content>
-	<Card.Footer class="self-start elevated-md">
+	<Card.Footer class="self-start elevated-{elevation}">
 		<TagList {...tags} />
 	</Card.Footer>
 </Card.Root>

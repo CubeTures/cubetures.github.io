@@ -1,24 +1,19 @@
-import { getDirName, getFileName } from "./helper";
 import { getImages, getMarkdown, getMarkdownList } from "./importer";
-import type {
-	Glob,
-	ProjectContent,
-	ProjectData,
-	ProjectMetadata,
-} from "./types";
+import type { MarkdownContent, ProjectData, ProjectMetadata } from "./types";
 
 export function getProjectList(): ProjectData[] {
-	const projects = getMarkdownList();
+	const projects = getMarkdownList("projects");
 	return parseGlobs(projects);
 }
 
-function parseGlobs(projects: Record<string, ProjectContent>): ProjectData[] {
+function parseGlobs(projects: Record<string, MarkdownContent>): ProjectData[] {
 	let result: ProjectData[] = [];
 
 	for (const [id, record] of Object.entries(projects)) {
 		result.push(parseData(id, record));
 	}
 
+	result = result.filter((project) => project.visible !== false);
 	result.sort((a, b) => {
 		if (a.pinned !== b.pinned) {
 			return a.pinned ? -1 : 1;
@@ -30,7 +25,7 @@ function parseGlobs(projects: Record<string, ProjectContent>): ProjectData[] {
 	return result;
 }
 
-function parseData(id: string, project: ProjectContent): ProjectData {
+function parseData(id: string, project: MarkdownContent): ProjectData {
 	const metadata = project.metadata as ProjectMetadata;
 
 	if (metadata === undefined) {
@@ -42,11 +37,11 @@ function parseData(id: string, project: ProjectContent): ProjectData {
 	return {
 		...metadata,
 		date: new Date(metadata.date),
-		images: getImages(id),
+		images: getImages("projects", id),
 		href: `/projects/${id}`,
 	} satisfies ProjectData;
 }
 
-export function getProject(id: string): ProjectContent {
-	return getMarkdown(id);
+export function getProject(id: string): MarkdownContent {
+	return getMarkdown("projects", id);
 }

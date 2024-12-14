@@ -32,6 +32,8 @@
 		--sidebar-accent-foreground: 240 5.9% 10%;
 		--sidebar-border: 220 13% 91%;
 		--sidebar-ring: 217.2 91.2% 59.8%;
+
+		--transition: 0.3s cubic-bezier(0.15, 0.54, 0.31, 0.91);
 	}
 
 	.dark {
@@ -75,37 +77,18 @@
 	}
 }
 
+body * {
+	transition: text-decoration var(--transition), border var(--transition);
+}
+
 .tilter {
 	transform-style: preserve-3d;
 	transform: perspective(1000px);
+	transition: all var(--transition);
 }
 
-.tilter:hover.rose {
-	--background: 343 88% 16%; /* 950 */
-	--card: 343 88% 16%; /* 950 */
-	--border: 343 80% 35%; /* 700 */
-	--middleground: 342 75% 20%; /* just a little less light than 900 */
-	--foreground: 356 100% 97%; /* 50 */
-	--muted-foreground: 353 96% 90%; /* 200 */
-
-  box-shadow: 0px 0px 100px 0px hsl(343, 88%, 16%); /* 950 */
-}
-
-.tilter:hover.fuchsia {
-  --background: 297 90% 16%; /* 950 */
-	--card: 297 90% 16%; /* 950 */
-	--border: 295 72% 40%; /* 700 */
-	--middleground: 297 64% 22%; /* just a little less light than 900 */
-	--foreground: 289 100% 98%; /* 50 */
-	--muted-foreground: 288 96% 91%; /* 200 */
-
-  box-shadow: 0px 0px 100px 0px hsl(297, 90%, 16%); /* 950 */
-}
-
-.elevated-sm,
-.elevated-md,
-.elevated-lg {
-	transition: all 0.3s cubic-bezier(0.15, 0.54, 0.31, 0.91);
+.tilter * {
+	transition: all var(--transition);
 }
 
 .tilter:hover .elevated-sm {
@@ -118,6 +101,10 @@
 
 .tilter:hover .elevated-lg {
 	transform: translateZ(50px);
+}
+
+.tilter:hover .elevated-btn:hover {
+	transform: translateZ(100px);
 }
 
 .tilter:hover .card-header {

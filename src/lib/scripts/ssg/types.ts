@@ -1,25 +1,42 @@
-export interface ProjectContentGlob {
+export interface MarkdownContentGlob {
 	metadata: any;
 	default: any;
 }
 
-export interface ProjectContent {
+export interface MarkdownContent {
 	metadata: any;
 	content: any;
 }
+
+export type ExperienceMetadata = {
+	start: Date;
+	end?: Date;
+	position: string;
+	company: string;
+	location: string;
+	desc: string[];
+	color: string;
+	visible?: boolean;
+} & Tags;
+
+export type ExperienceData = {
+	href: string;
+} & ExperienceMetadata;
 
 export type ProjectMetadata = {
 	name: string;
 	desc: string;
 	date: Date;
+	color: string;
 	pinned?: boolean;
+	visible?: boolean;
 } & Tags &
-	Links;
+	ProjectLinks;
 
-export interface ProjectData extends ProjectMetadata {
+export type ProjectData = {
 	images: Record<string, any>;
 	href: string;
-}
+} & ProjectMetadata;
 
 export interface Glob<T> {
 	default: T;
@@ -28,7 +45,7 @@ export interface Glob<T> {
 export interface Tags {
 	/**
 	 * 	Software
-	 * 		Other
+	 * 		Other (console app, etc.)
 	 * 		Game
 	 *		Full Stack
 	 *			Web
@@ -36,7 +53,14 @@ export interface Tags {
 	 *			Mobile
 	 *			Cloud
 	 */
-	category: "web" | "mobile" | "desktop" | "cloud" | "game" | "other";
+	category:
+		| "full-stack"
+		| "web"
+		| "mobile"
+		| "desktop"
+		| "cloud"
+		| "game"
+		| "other";
 
 	// java, go, haskell
 	languages?: string[];
@@ -54,7 +78,12 @@ export interface Tags {
 	tools?: string[];
 }
 
-export interface Links {
+export interface ProjectLinks {
 	github?: string;
 	live?: string;
 }
+
+export type Groups = "experience" | "projects" | "highlights";
+
+export type MarkdownImport = Record<Groups, Record<string, MarkdownContent>>;
+export type ImagesImport = Record<Groups, Record<string, Record<string, any>>>;

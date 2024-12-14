@@ -1,10 +1,11 @@
 ---
+group: projects
 id: example
 name: Example
 desc: An example project for testing my static site generation.
 date: "12-10-2024"
 category: web
-languages: 
+languages:
     - go
     - typescript
 frameworks:
@@ -15,6 +16,7 @@ tools:
     - git
 github: "https://github.com/owenshadburne"
 live: "https://www.example.com"
+color: rose
 ---
 
 <script>
@@ -33,6 +35,6 @@ export function example(num: int) {
 }
 ```
 
-![{id}](icon.png)
+![{group} {id}](icon.png)
 
 <Example />

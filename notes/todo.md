@@ -1,19 +1,25 @@
 # TODO
 
+-   "Click the title or the image of the project to read more about it."
+
 ## Priority 1
 
 -   Header
 -   Summary
--   Projects
-    -   Category
-    -   Links
--   Experience
-    -   How to frame?
+-   Skills
+-   Links
+    -   Github(s)
+    -   Linkedin
+-   Options to disable visiting markdown pages for now
+-   Vanilla-Tilt not binding properly when page is reloaded through back
 
 ## Priority 2
 
 -   Sorting / filtering system
 -   Fragment system for auto filtering
+-   Tooltips
+    -   Live
+    -   Github
 
 # Ideas
 
@@ -28,6 +34,7 @@
 
 # Stretch
 
+-   Better responsive design
 -   Blog
     -   Posts about
 -   Cool card animations

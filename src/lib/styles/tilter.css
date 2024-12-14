@@ -1,0 +1,329 @@
+.tilter:hover.slate {
+	--background: 229 84% 5%;
+	--card: 229 84% 5%;
+	--border: 215 25% 27%;
+	--middleground: 222 47% 11%;
+	--foreground: 210 40% 98%;
+	--muted-foreground: 214 32% 91%;
+
+	box-shadow: 0px 0px 100px 0px hsl(229, 84%, 5%);
+}
+
+body:has(.tilter:hover.slate) {
+	--primary: 215 16% 47%;
+}
+
+.tilter:hover.gray {
+	--background: 224 71% 4%;
+	--card: 224 71% 4%;
+	--border: 217 19% 27%;
+	--middleground: 221 39% 11%;
+	--foreground: 210 20% 98%;
+	--muted-foreground: 220 13% 91%;
+
+	box-shadow: 0px 0px 100px 0px hsl(224, 71%, 4%);
+}
+
+body:has(.tilter:hover.gray) {
+	--primary: 220 9% 46%;
+}
+
+.tilter:hover.zinc {
+	--background: 240 10% 4%;
+	--card: 240 10% 4%;
+	--border: 240 5% 26%;
+	--middleground: 240 6% 10%;
+	--foreground: 0 0% 98%;
+	--muted-foreground: 240 6% 90%;
+
+	box-shadow: 0px 0px 100px 0px hsl(240, 10%, 4%);
+}
+
+body:has(.tilter:hover.zinc) {
+	--primary: 240 4% 46%;
+}
+
+.tilter:hover.neutral {
+	--background: 0 0% 4%;
+	--card: 0 0% 4%;
+	--border: 0 0% 25%;
+	--middleground: 0 0% 9%;
+	--foreground: 0 0% 98%;
+	--muted-foreground: 0 0% 90%;
+
+	box-shadow: 0px 0px 100px 0px hsl(0, 0%, 4%);
+}
+
+body:has(.tilter:hover.neutral) {
+	--primary: 0 0% 45%;
+}
+
+.tilter:hover.stone {
+	--background: 20 14% 4%;
+	--card: 20 14% 4%;
+	--border: 30 6% 25%;
+	--middleground: 24 10% 10%;
+	--foreground: 60 9% 98%;
+	--muted-foreground: 20 6% 90%;
+
+	box-shadow: 0px 0px 100px 0px hsl(20, 14%, 4%);
+}
+
+body:has(.tilter:hover.stone) {
+	--primary: 25 5% 45%;
+}
+
+.tilter:hover.red {
+	--background: 0 75% 15%;
+	--card: 0 75% 15%;
+	--border: 0 74% 42%;
+	--middleground: 0 63% 31%;
+	--foreground: 0 86% 97%;
+	--muted-foreground: 0 96% 89%;
+
+	box-shadow: 0px 0px 100px 0px hsl(0, 75%, 15%);
+}
+
+body:has(.tilter:hover.red) {
+	--primary: 0 84% 60%;
+}
+
+.tilter:hover.orange {
+	--background: 13 81% 15%;
+	--card: 13 81% 15%;
+	--border: 17 88% 40%;
+	--middleground: 15 75% 28%;
+	--foreground: 33 100% 96%;
+	--muted-foreground: 32 98% 83%;
+
+	box-shadow: 0px 0px 100px 0px hsl(13, 81%, 15%);
+}
+
+body:has(.tilter:hover.orange) {
+	--primary: 25 95% 53%;
+}
+
+.tilter:hover.amber {
+	--background: 21 92% 14%;
+	--card: 21 92% 14%;
+	--border: 26 90% 37%;
+	--middleground: 22 78% 26%;
+	--foreground: 48 100% 96%;
+	--muted-foreground: 48 97% 77%;
+
+	box-shadow: 0px 0px 100px 0px hsl(21, 92%, 14%);
+}
+
+body:has(.tilter:hover.amber) {
+	--primary: 38 92% 50%;
+}
+
+.tilter:hover.yellow {
+	--background: 26 83% 14%;
+	--card: 26 83% 14%;
+	--border: 35 92% 33%;
+	--middleground: 28 73% 26%;
+	--foreground: 55 92% 95%;
+	--muted-foreground: 53 98% 77%;
+
+	box-shadow: 0px 0px 100px 0px hsl(26, 83%, 14%);
+}
+
+body:has(.tilter:hover.yellow) {
+	--primary: 45 93% 47%;
+}
+
+.tilter:hover.lime {
+	--background: 89 80% 10%;
+	--card: 89 80% 10%;
+	--border: 86 78% 27%;
+	--middleground: 88 61% 20%;
+	--foreground: 78 92% 95%;
+	--muted-foreground: 81 88% 80%;
+
+	box-shadow: 0px 0px 100px 0px hsl(89, 80%, 10%);
+}
+
+body:has(.tilter:hover.lime) {
+	--primary: 84 81% 44%;
+}
+
+.tilter:hover.green {
+	--background: 145 80% 10%;
+	--card: 145 80% 10%;
+	--border: 142 72% 29%;
+	--middleground: 144 61% 20%;
+	--foreground: 138 76% 97%;
+	--muted-foreground: 141 79% 85%;
+
+	box-shadow: 0px 0px 100px 0px hsl(145, 80%, 10%);
+}
+
+body:has(.tilter:hover.green) {
+	--primary: 142 71% 45%;
+}
+
+.tilter:hover.emerald {
+	--background: 166 91% 9%;
+	--card: 166 91% 9%;
+	--border: 163 94% 24%;
+	--middleground: 164 86% 16%;
+	--foreground: 152 81% 96%;
+	--muted-foreground: 152 76% 80%;
+
+	box-shadow: 0px 0px 100px 0px hsl(166, 91%, 9%);
+}
+
+body:has(.tilter:hover.emerald) {
+	--primary: 160 84% 39%;
+}
+
+.tilter:hover.teal {
+	--background: 179 84% 10%;
+	--card: 179 84% 10%;
+	--border: 175 77% 26%;
+	--middleground: 176 61% 19%;
+	--foreground: 166 76% 97%;
+	--muted-foreground: 168 84% 78%;
+
+	box-shadow: 0px 0px 100px 0px hsl(179, 84%, 10%);
+}
+
+body:has(.tilter:hover.teal) {
+	--primary: 173 80% 40%;
+}
+
+.tilter:hover.cyan {
+	--background: 197 79% 15%;
+	--card: 197 79% 15%;
+	--border: 193 82% 31%;
+	--middleground: 196 64% 24%;
+	--foreground: 183 100% 96%;
+	--muted-foreground: 186 94% 82%;
+
+	box-shadow: 0px 0px 100px 0px hsl(197, 79%, 15%);
+}
+
+body:has(.tilter:hover.cyan) {
+	--primary: 189 94% 43%;
+}
+
+.tilter:hover.sky {
+	--background: 204 80% 16%;
+	--card: 204 80% 16%;
+	--border: 201 96% 32%;
+	--middleground: 202 80% 24%;
+	--foreground: 204 100% 97%;
+	--muted-foreground: 201 94% 86%;
+
+	box-shadow: 0px 0px 100px 0px hsl(204, 80%, 16%);
+}
+
+body:has(.tilter:hover.sky) {
+	--primary: 199 89% 48%;
+}
+
+.tilter:hover.blue {
+	--background: 226 57% 21%;
+	--card: 226 57% 21%;
+	--border: 224 76% 48%;
+	--middleground: 224 64% 33%;
+	--foreground: 214 100% 97%;
+	--muted-foreground: 213 97% 87%;
+
+	box-shadow: 0px 0px 100px 0px hsl(226, 57%, 21%);
+}
+
+body:has(.tilter:hover.blue) {
+	--primary: 217 91% 60%;
+}
+
+.tilter:hover.indigo {
+	--background: 244 47% 20%;
+	--card: 244 47% 20%;
+	--border: 245 58% 51%;
+	--middleground: 242 47% 34%;
+	--foreground: 226 100% 97%;
+	--muted-foreground: 228 96% 89%;
+
+	box-shadow: 0px 0px 100px 0px hsl(244, 47%, 20%);
+}
+
+body:has(.tilter:hover.indigo) {
+	--primary: 239 84% 67%;
+}
+
+.tilter:hover.violet {
+	--background: 261 73% 23%;
+	--card: 261 73% 23%;
+	--border: 263 70% 50%;
+	--middleground: 264 67% 35%;
+	--foreground: 250 100% 98%;
+	--muted-foreground: 251 95% 92%;
+
+	box-shadow: 0px 0px 100px 0px hsl(261, 73%, 23%);
+}
+
+body:has(.tilter:hover.violet) {
+	--primary: 258 90% 66%;
+}
+
+.tilter:hover.purple {
+	--background: 274 87% 21%;
+	--card: 274 87% 21%;
+	--border: 272 72% 47%;
+	--middleground: 274 66% 32%;
+	--foreground: 270 100% 98%;
+	--muted-foreground: 269 100% 92%;
+
+	box-shadow: 0px 0px 100px 0px hsl(274, 87%, 21%);
+}
+
+body:has(.tilter:hover.purple) {
+	--primary: 271 91% 65%;
+}
+
+.tilter:hover.fuchsia {
+	--background: 297 90% 16%;
+	--card: 297 90% 16%;
+	--border: 295 72% 40%;
+	--middleground: 297 64% 28%;
+	--foreground: 289 100% 98%;
+	--muted-foreground: 288 96% 91%;
+
+	box-shadow: 0px 0px 100px 0px hsl(297, 90%, 16%);
+}
+
+body:has(.tilter:hover.fuchsia) {
+	--primary: 292 84% 61%;
+}
+
+.tilter:hover.pink {
+	--background: 336 84% 17%;
+	--card: 336 84% 17%;
+	--border: 335 78% 42%;
+	--middleground: 336 69% 30%;
+	--foreground: 327 73% 97%;
+	--muted-foreground: 326 85% 90%;
+
+	box-shadow: 0px 0px 100px 0px hsl(336, 84%, 17%);
+}
+
+body:has(.tilter:hover.pink) {
+	--primary: 330 81% 60%;
+}
+
+.tilter:hover.rose {
+	--background: 343 88% 16%;
+	--card: 343 88% 16%;
+	--border: 345 83% 41%;
+	--middleground: 342 75% 30%;
+	--foreground: 356 100% 97%;
+	--muted-foreground: 353 96% 90%;
+
+	box-shadow: 0px 0px 100px 0px hsl(343, 88%, 16%);
+}
+
+body:has(.tilter:hover.rose) {
+	--primary: 350 89% 60%;
+}

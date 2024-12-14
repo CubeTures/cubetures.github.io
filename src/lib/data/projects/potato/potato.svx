@@ -3,6 +3,8 @@ name: Potato
 desc: A magnificent rave on the sheer brilliance of potatoes.
 date: "12-9-2024"
 category: cloud
+github: "https://github.com/owenshadburne"
+color: amber
 ---
 
 # Potato

@@ -9,7 +9,7 @@
 	<data.content />
 {:else}
 	<InvalidPage
-		group={"projects"}
+		group={"experience"}
 		id={data.id as string}
 	/>
 {/if}

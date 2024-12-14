@@ -1,22 +1,43 @@
-import { getDirName, getFileName } from "./helper";
-import type { Glob, ProjectContent, ProjectContentGlob } from "./types";
+import { getDirName, getFileName, getGroupName } from "./helper";
+import type {
+	Glob,
+	Groups,
+	ImagesImport,
+	MarkdownContent,
+	MarkdownContentGlob,
+	MarkdownImport,
+} from "./types";
 
-let markdown: Record<string, ProjectContent> | undefined;
-let images: Record<string, Record<string, any>> | undefined;
+let markdown: MarkdownImport | undefined;
+let images: ImagesImport | undefined;
 
+// change structure
+// import all markdown
+// then segregate them by directory
 function importMarkdown() {
 	if (markdown === undefined) {
-		markdown = {};
-		const projects = import.meta.glob<ProjectContentGlob>(
-			"/src/lib/data/projects/**/*.{svx, md}",
+		markdown = {
+			experience: {},
+			projects: {},
+			highlights: {},
+		};
+
+		const projects = import.meta.glob<MarkdownContentGlob>(
+			"/src/lib/data/**/*.{svx, md}",
 			{
 				eager: true,
 			}
 		);
 
 		for (const [path, project] of Object.entries(projects)) {
+			const group = getGroupName(path);
 			const id = getFileName(path, { ".md": "", ".svx": "" });
-			markdown[id] = {
+
+			if (markdown[group] === undefined) {
+				markdown[group] = {};
+			}
+
+			markdown[group][id] = {
 				metadata: project.metadata,
 				content: project.default,
 			};
@@ -26,81 +47,92 @@ function importMarkdown() {
 
 function importImages() {
 	if (images === undefined) {
-		images = {};
+		images = {
+			experience: {},
+			projects: {},
+			highlights: {},
+		};
+
 		const globs = import.meta.glob<Glob<any>>(
-			"/src/lib/data/projects/**/*.{png,jpeg,jpg,webp,gif,tiff,bmp,raw}",
+			"/src/lib/data/**/*.{png,jpeg,jpg,webp,gif,tiff,bmp,raw}",
 			{ eager: true }
 		);
 
 		for (const [path, glob] of Object.entries(globs)) {
+			const group = getGroupName(path);
 			const id = getDirName(path);
 			const name = getFileName(path);
 
-			if (images[id] === undefined) {
-				images[id] = {};
+			if (images[group] === undefined) {
+				images[group] = {};
 			}
 
-			images[id][name] = glob.default;
+			if (images[group][id] === undefined) {
+				images[group][id] = {};
+			}
+
+			images[group][id][name] = glob.default;
 		}
 	}
 }
 
-export function getMarkdownList(): Record<string, ProjectContent> {
+export function getMarkdownList(
+	group: Groups
+): Record<string, MarkdownContent> {
 	importMarkdown();
 
 	if (markdown === undefined) {
 		throw new Error("Error with importing markdown list");
 	}
 
-	return markdown;
+	return markdown[group];
 }
 
-export function getMarkdown(id: string): ProjectContent {
-	importMarkdown();
+export function getMarkdown(group: Groups, id: string): MarkdownContent {
+	const md = getMarkdownList(group);
 
-	if (markdown === undefined) {
-		throw new Error(`Error with importing markdown list`);
-	} else if (markdown[id] === undefined) {
+	if (md === undefined) {
+		throw new Error(`Error with importing markdown group ${group}`);
+	} else if (md[id] === undefined) {
 		console.warn(
-			`Error with importing markdown file ${id} (it may be an image preloading)`
+			`Error with importing markdown file ${id} group ${group} (it may be an image preloading)`
 		);
+
 		return {
 			metadata: {},
 			content: () => {},
 		};
 	}
 
-	return markdown[id];
+	return md[id];
 }
 
-export function getImages(id: string): Record<string, any> {
+export function getImages(group: Groups, id: string): Record<string, any> {
 	importImages();
 
 	if (images === undefined) {
 		throw new Error("Error with importing images");
-	} else if (images[id] === undefined) {
+	} else if (images[group] === undefined) {
+		throw new Error(`Error with importing image group ${group}`);
+	} else if (images[group][id] === undefined) {
 		console.warn(
-			`Error with importing images for ${id} (or no images exist)`
+			`Error with importing images for ${id} group ${group} (or no images exist)`
 		);
+
 		return {};
 	}
 
-	return images[id];
+	return images[group][id];
 }
 
-export function getImage(id: string, name: string): any {
-	importImages();
+export function getImage(group: Groups, id: string, name: string): any {
+	const imgs = getImages(group, id);
 
-	if (images === undefined) {
-		throw new Error("Error with importing images");
-	} else if (images[id] === undefined) {
+	if (imgs[name] === undefined) {
 		console.warn(
-			`Error with importing images for ${id} (or no images exist)`
+			`Error with importing image ${name} for ${id} group ${group}`
 		);
-		return undefined;
-	} else if (images[id][name] === undefined) {
-		console.warn(`Error with importing image ${name} for ${id}`);
 	}
 
-	return images[id][name];
+	return imgs[name];
 }
