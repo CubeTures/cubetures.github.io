@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex flex-col w-full p-6 pb-24">
-	<div class="flex flex-col gap-6 self-center max-w-full xl:max-w-screen-lg">
+	<div class="flex flex-col gap-6 self-center max-w-full max-w-screen-md">
 		{@render children()}
 	</div>
 </div>

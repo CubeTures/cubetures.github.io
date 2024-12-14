@@ -11,7 +11,7 @@ type Settings = Record<
 export const settings: Settings = {
 	experience: {
 		tilt: false,
-		markdownLinks: true,
+		markdownLinks: false,
 	},
 	projects: {
 		tilt: false,

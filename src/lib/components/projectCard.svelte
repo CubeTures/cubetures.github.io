@@ -59,7 +59,7 @@
 {/snippet}
 
 <Card.Root
-	class="w-full grid grid-rows-subgrid row-span-3 hover:z-50 tilter {color} {header}"
+	class="w-full grid grid-rows-subgrid row-span-3 hover:z-20 tilter {color} {header}"
 	{...tiltOptions}
 >
 	<Card.Header

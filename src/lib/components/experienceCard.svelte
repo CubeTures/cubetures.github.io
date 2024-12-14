@@ -84,5 +84,5 @@
 			<TagList {...tags} />
 		</Card.Footer>
 	</Card.Root>
-	<div class="border-r-2 border-r-solid border-r-primary z-50"></div>
+	<div class="border-r-2 border-r-solid border-r-primary z-30"></div>
 </div>

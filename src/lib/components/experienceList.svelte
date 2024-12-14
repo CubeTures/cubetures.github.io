@@ -22,21 +22,21 @@
 		{#snippet Separator(pos, index)}
 			{#if pos === "first"}
 				<div
-					class="border-r-2 border-dashed border-r-primary h-3 z-50 -mt-6"
+					class="border-r-2 border-dashed border-r-primary h-3 z-30 -mt-6"
 				></div>
 				<div
-					class="border-r-2 border-solid border-r-primary h-3 z-50"
+					class="border-r-2 border-solid border-r-primary h-3 z-30"
 				></div>
 			{:else if pos === "last"}
 				<div
-					class="border-r-2 border-solid border-r-primary h-3 z-50"
+					class="border-r-2 border-solid border-r-primary h-3 z-30"
 				></div>
 				<div
-					class="border-r-2 border-dashed border-r-primary h-3 z-50 -mb-6"
+					class="border-r-2 border-dashed border-r-primary h-3 z-30 -mb-6"
 				></div>
 			{:else}
 				<div
-					class="border-r-2 border-r-solid border-r-primary h-6 z-50"
+					class="border-r-2 border-r-solid border-r-primary h-6 z-30"
 				></div>
 			{/if}
 		{/snippet}

@@ -41,7 +41,7 @@
 
 	const triggerContent = $derived.by(() => {
 		if (filters.category === "other") {
-			return "Engineer.";
+			return `<span class="underline decoration-primary" style="transition: text-decoration var(--transition)">Engineer.</span>`;
 		}
 
 		const header = options.find(

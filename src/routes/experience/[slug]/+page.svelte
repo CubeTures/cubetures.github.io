@@ -5,6 +5,16 @@
 	const { data }: { data: PageData } = $props();
 </script>
 
+<svelte:head>
+	{#if data.content}
+		<title>{data.metadata.position} - Owen Shadburne</title>
+		<meta
+			name="description"
+			content={data.metadata.desc.join(". ")}
+		/>
+	{/if}
+</svelte:head>
+
 {#if data.content}
 	<data.content />
 {:else}

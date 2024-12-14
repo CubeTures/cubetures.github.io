@@ -4,21 +4,15 @@
 
 ## Priority 1
 
--   Logo
+-   Port projects & experience
+-
 -   Skills
     -   Inject skills (do after all write-ups to see if this is necessary)
--   Links
-    -   Github(s)
-    -   Linkedin
-
-## Priority 2
-
 -   Metadata for pages
 -   Sorting / filtering system
     -   Highlight tags that are selected
     -   Popup that is just the skills section
 -   Fragment system for auto filtering
--   On smaller devices, tags are limited and can be expanded with a "view more"
 -   Add more color tinting
     -   When a color glows, shift the hue of all the other style elements (background, middleground, border) for every element to match that color's hue
 
@@ -33,7 +27,10 @@
 
 # Stretch
 
+-   Table of contents for markdown pages (show different headers)
 -   Better responsive design
+    -   Particularly with the experience (it takes up too much horizontal space)
+    -   On phones, the item in the center of the screen is colored (when an item gets 1/3 to the top, it becomes "selected")
 -   Vanilla-Tilt not binding properly when page is reloaded through back
 -   Highlights
     -   Posts about events or projects significant, but not significant enough to be on projects / experience list

@@ -12,6 +12,14 @@
 	// console.log(css);
 </script>
 
+<svelte:head>
+	<title>Owen Shadburne</title>
+	<meta
+		name="description"
+		content="A portfolio website for Owen Shadburne"
+	/>
+</svelte:head>
+
 {#snippet Header(text: string)}
 	<h2 class="text-4xl font-medium underline decoration-primary">{text}</h2>
 {/snippet}
@@ -33,4 +41,4 @@
 />
 
 {@render Header("Skills")}
-<SkillList {data}/>
+<SkillList {data} />
