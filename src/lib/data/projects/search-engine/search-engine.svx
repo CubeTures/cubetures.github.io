@@ -1,0 +1,27 @@
+---
+group: projects
+id: search-engine
+color: slate
+visible: true
+
+name: Search Engine
+desc: "A web crawler and search engine running running on a local database."
+date: 2-1-2023
+pinned: false
+
+category: web
+languages: 
+    - JavaScript
+    - HTML
+    - CSS
+libraries:
+    - Express
+    - Bootstrap
+    - Jest
+platforms:
+    - Node
+tools:
+    - Git
+
+github: "https://github.com/owenshadburne/Search-Engine" 
+---

@@ -1,0 +1,22 @@
+---
+group: projects
+id: bloxorz
+color: red
+visible: true
+
+name: Bloxorz
+desc: A 2D recreation of the flash game Bloxorz.
+date: 11-1-2021
+pinned: false
+
+category: game
+languages:
+    - Python
+libraries:
+    - PyGame
+    - PyInstaller
+tools:
+    - Git
+
+github: "https://github.com/owenshadburne/Bloxorz"
+---

@@ -1,0 +1,26 @@
+---
+group: projects
+id: whatsapp-visualizer
+color: green
+visible: true
+
+name: WhatsApp Visualizer
+desc: "A data analysis and visualization tool for WhatsApp chats."
+date: "12-21-2024"
+pinned: true
+
+category: web
+languages:
+    - Go
+    - WebAssembly
+    - TypeScript
+frameworks:
+    - Svelte
+libraries:
+    - Unovis
+tools:
+    - Git
+    - Github Pages
+other:
+    - Data Visualization
+---

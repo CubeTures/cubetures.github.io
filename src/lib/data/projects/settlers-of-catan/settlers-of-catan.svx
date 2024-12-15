@@ -1,0 +1,21 @@
+---
+group: projects
+id: settlers-of-catan
+color: green
+visible: true
+
+name: Settlers of Catan
+desc: "A faithful reaction of the popular board game Settlers of Catan using Java Swing."
+date: 5-1-2022
+pinned: false
+
+category: game
+languages:
+    - Java
+libraries:
+    - Java Swing
+tools:
+    - Git
+
+github: "https://github.com/owenshadburne/Settlers-of-Catan"
+---

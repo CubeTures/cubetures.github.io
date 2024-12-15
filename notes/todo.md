@@ -4,17 +4,21 @@
 
 ## Priority 1
 
--   Port projects & experience
--
--   Skills
-    -   Inject skills (do after all write-ups to see if this is necessary)
--   Metadata for pages
+-   Summaries
+-   Photos for projects
+-   Experience and project pages
+    -   See full list button
+
+## Priority 2
+
 -   Sorting / filtering system
     -   Highlight tags that are selected
     -   Popup that is just the skills section
 -   Fragment system for auto filtering
 -   Add more color tinting
     -   When a color glows, shift the hue of all the other style elements (background, middleground, border) for every element to match that color's hue
+    -   Every other element becomes dim?
+        -   Dim foregrounds, etc.
 
 # Links
 

@@ -1,0 +1,18 @@
+---
+group: projects
+id: sql-importer
+color: purple
+visible: true
+
+name: SQL Importer
+desc: "A lightweight Python program for converting any json, csv, or xml file into an SQLite database."
+date: 10-1-2022
+pinned: false
+
+category: desktop
+languages:
+    - Python
+    - SQL
+
+github: "https://github.com/owenshadburne/SQL-Importer"
+---

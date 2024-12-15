@@ -1,0 +1,21 @@
+---
+group: experience
+id:
+color:
+visible:
+
+start:
+end:
+position:
+company:
+location:
+desc:
+
+category:
+languages:
+frameworks:
+libraries:
+platforms:
+tools:
+other:
+---

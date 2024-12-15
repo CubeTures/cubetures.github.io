@@ -87,7 +87,7 @@
 	const width = 640;
 	let innerWidth = $state(width);
 	let concat = $derived(innerWidth < width);
-	const limit = $derived(concat && !labeled ? 2 : undefined);
+	const limit = $derived(concat && !labeled ? 2 : labeled ? undefined : 5);
 	let limited = $derived(limit ? isLimited(limit) : false);
 	let expanded = $state(false);
 
@@ -149,7 +149,7 @@
 	{#if sorted && Object.keys(sorted).length > 0}
 		{#if labeled}
 			<p class="text-2xl">{capitalize(section)}</p>
-			<div class="flex gap-4">
+			<div class="flex flex-wrap gap-4">
 				{#each sorted as key}
 					<Tag
 						type={section}

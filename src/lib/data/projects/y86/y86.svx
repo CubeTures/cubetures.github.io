@@ -1,0 +1,17 @@
+---
+group: projects
+id: y86
+color: rose
+visible: true
+
+name: y86 Syntax Highlighter
+desc: "An open source Syntax Highlighter for the toy assembly language y86."
+date: "12-1-2024"
+pinned: false
+
+category: desktop
+other:
+    - VSCode Extension
+
+github: "https://github.com/CubeTures/y86-Syntax-Highlighter"
+---

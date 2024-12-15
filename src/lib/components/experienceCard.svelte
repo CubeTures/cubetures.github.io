@@ -55,8 +55,8 @@
 {/snippet}
 
 {#snippet Desc()}
-	{#if desc.length > 1}
-		<ul class="list-disc list-inside">
+	{#if Array.isArray(desc) && desc.length > 1}
+		<ul class="list-disc ml-6">
 			{#each desc as d}
 				<li>{d}</li>
 			{/each}

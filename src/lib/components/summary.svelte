@@ -97,5 +97,5 @@
 		I'm a{filters.category === "other" ? "n" : ""}
 		{@render Choice()}
 	</p>
-	<p class="text-lg">{summaries[filters.category]}</p>
+	<p>{summaries[filters.category]}</p>
 </div>

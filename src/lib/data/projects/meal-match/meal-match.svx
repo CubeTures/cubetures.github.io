@@ -1,0 +1,28 @@
+---
+group: projects
+id: meal-match
+color: pink
+visible: true
+
+name: Meal Match
+desc: "A Tinder-like web app engineered to solve the impossible task of finding a place to eat with a group of friends."
+date: "2-1-2024"
+pinned: false
+
+category: web
+languages:
+    - JavaScript
+    - HTML
+    - CSS
+libraries:
+    - Realtime Database
+    - Google Maps API
+platforms:
+    - Firebase
+tools:
+    - Git
+    - Github Pages
+
+live: "https://owenshadburne.github.io/Pages/MealMatch/home.html"
+github: "https://github.com/owenshadburne/owenshadburne.github.io"
+---

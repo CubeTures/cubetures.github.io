@@ -9,8 +9,11 @@ export interface MarkdownContent {
 }
 
 export interface MarkdownMetadata {
+	group: Groups;
+	id: string;
 	color: string;
-	visible?: boolean;
+	visible?: boolean; // not published
+	exclude?: boolean; // not counted
 }
 
 export interface ExperienceMetadata extends MarkdownMetadata, Tags {

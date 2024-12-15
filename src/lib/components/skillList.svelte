@@ -33,6 +33,10 @@
 
 		for (const [category, list] of Object.entries(data)) {
 			for (const entry of list) {
+				if (entry.exclude === true) {
+					continue;
+				}
+
 				for (const [key, values] of Object.entries(entry)) {
 					if (key == section) {
 						for (const value of values) {

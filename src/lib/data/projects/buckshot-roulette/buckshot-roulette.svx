@@ -1,0 +1,28 @@
+---
+group: projects
+id: buckshot-roulette
+color: amber
+visible: true
+
+name: Buckshot Roulette
+desc: A recreation of Buckshot Roulette with realtime multiplayer and hand-drawn animations.
+date: 10-31-2024
+pinned: true
+
+category: web
+languages:
+    - TypeScript
+frameworks:
+    - Svelte
+libraries:
+    - WebRTC
+    - Firestore
+platforms:
+    - Firebase
+tools:
+    - Git
+    - Github Pages
+
+live: "https://cubetures.github.io/BuckshotRoulette/"
+github: "https://github.com/CubeTures/BuckshotRoulette"
+---

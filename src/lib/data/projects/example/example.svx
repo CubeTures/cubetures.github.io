@@ -14,10 +14,12 @@ frameworks:
 libraries:
     - Unovis
 tools:
-    - Git
+    - Gitlab
 github: "https://github.com/owenshadburne"
 live: "https://www.example.com"
 color: rose
+visible: false
+exclude: true
 ---
 
 <script>

@@ -43,6 +43,6 @@
 	{/if}
 {/each}
 
-{#if limitReached}
+{#if limitReached && LimitReachedComponent}
 	<LimitReachedComponent />
 {/if}

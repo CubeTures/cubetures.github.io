@@ -1,0 +1,21 @@
+---
+group: projects
+id: musical-murder
+color: red
+visible: true
+
+name: Musical Murder
+desc: "A rhythm-based action game about assassinating the leader of a disco club."
+date: "11-23-2024"
+pinned: false
+
+category: game
+languages:
+    - C#
+frameworks:
+    - Unity
+tools:
+    - Git
+
+live: "https://cubetures.itch.io/musical-murder"
+---

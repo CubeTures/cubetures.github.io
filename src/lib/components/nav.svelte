@@ -3,6 +3,7 @@
 
 	const linkedin = "https://www.linkedin.com/in/owen-shadburne/";
 	const github = "https://github.com/owenshadburne";
+	const itch = "https://cubetures.itch.io";
 </script>
 
 <div
@@ -17,9 +18,12 @@
 				width="36"
 				height="36"
 			/> -->
-			<a href="/" class="flex gap-2">
+			<a
+				href="/"
+				class="flex gap-2"
+			>
 				<img
-					src="/LogoBig.png"
+					src="/Logo.png"
 					alt="Home"
 					width="36"
 					height="36"
@@ -27,16 +31,23 @@
 			</a>
 		</div>
 		<div class="flex gap-2">
-			<a href={linkedin}>
+			<a href={itch} class="self-center">
 				<Icon
-					icon="mdi:linkedin"
-					width="36"
-					height="36"
+					icon="fa6-brands:itch-io"
+					width="32"
+					height="32"
 				/>
 			</a>
 			<a href={github}>
 				<Icon
 					icon="mdi:github"
+					width="36"
+					height="36"
+				/>
+			</a>
+			<a href={linkedin}>
+				<Icon
+					icon="mdi:linkedin"
 					width="36"
 					height="36"
 				/>
