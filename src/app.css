@@ -36,6 +36,8 @@
 		--transition: 0.3s cubic-bezier(0.15, 0.54, 0.31, 0.91);
 		--primary-filter: brightness(0) saturate(100%) invert(65%) sepia(71%)
 			saturate(2776%) hue-rotate(192deg) brightness(105%) contrast(99%);
+		--white-filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+			saturate(0%) hue-rotate(351deg) brightness(104%) contrast(102%);
 	}
 
 	.dark {

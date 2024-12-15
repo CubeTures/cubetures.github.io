@@ -5,7 +5,6 @@
 ## Priority 1
 
 -   Summaries
--   Photos for projects
 
 ## Priority 2
 

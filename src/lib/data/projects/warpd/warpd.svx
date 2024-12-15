@@ -1,7 +1,7 @@
 ---
 group: projects
 id: warpd
-color: teal
+color: violet
 visible: true
 
 name: WARPD
