@@ -1,1 +1,0 @@
-import{n as r,o as c,p as s,E as i,v as p,w as h,x as d}from"./runtime._Ko0kMKa.js";function u(o,t,f){r&&c();var e=o,a,n;s(()=>{a!==(a=t())&&(n&&(d(n),n=null),a&&(n=p(()=>f(e,a))))},i),r&&(e=h)}export{u as c};
