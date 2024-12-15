@@ -16,6 +16,8 @@ libraries:
     - Java Swing
 tools:
     - Git
+other:
+    - Collaborative
 
 github: "https://github.com/owenshadburne/Settlers-of-Catan"
 ---

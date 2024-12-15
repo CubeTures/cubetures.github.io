@@ -48,6 +48,7 @@
 				<a
 					href={"/experience"}
 					class="underline decoration-primary text-primary text-md flex gap-2 justify-center"
+					style="transition: inherit"
 					>See full experience list
 				</a>
 			</div>

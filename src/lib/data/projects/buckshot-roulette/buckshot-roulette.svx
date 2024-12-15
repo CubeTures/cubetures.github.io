@@ -9,7 +9,7 @@ desc: A recreation of Buckshot Roulette with realtime multiplayer and hand-drawn
 date: 10-31-2024
 pinned: true
 
-category: web
+category: full-stack
 languages:
     - TypeScript
 frameworks:

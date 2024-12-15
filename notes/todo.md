@@ -4,14 +4,17 @@
 
 ## Priority 1
 
--   Summaries
-
-## Priority 2
-
+-   Thumbnail is the ${id}.png
+-   Redo of category system
+    -   Only leaves can be tags
+    -   Instead of "full-stack", be more specific with what is used (e.g. web, cloud)
+-   Fragment system for auto filtering
 -   Sorting / filtering system
     -   Highlight tags that are selected
     -   Popup that is just the skills section
--   Fragment system for auto filtering
+
+## Priority 2
+
 -   Add more color tinting
     -   When a color glows, shift the hue of all the other style elements (background, middleground, border) for every element to match that color's hue
     -   Every other element becomes dim?

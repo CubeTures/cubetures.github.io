@@ -16,6 +16,8 @@ frameworks:
     - Unity
 tools:
     - Git
+other:
+    - Collaborative
 
 live: "https://cubetures.itch.io/warpd"
 ---

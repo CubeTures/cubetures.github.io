@@ -35,3 +35,10 @@ tools:
 ---
 
 # About my time at Soule
+
+"Don’t waste your time. (We only show you people who actually align with your interests and preferences.)"
+"Love isn’t a game, so don’t search like it is. (We don’t gamify the search like other apps.)"
+"See what really matters. (Focus on their inside before you judge their outside.)"
+"Get off the app and into each other’s arms. (Our Datemaker gives you a fun and easy way to plan and succeed on dates.)"
+"Have the confidence to keep the ball rolling. (Our Aftercare makes scoring a second date just as easy as the first.)"
+"Screw hookup culture – find real, long-lasting relationships. (Go exclusive when the time is right.)"

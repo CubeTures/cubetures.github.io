@@ -1,6 +1,3 @@
 {
-	"cSpell.words": ["mdsvex", "numpy", "unovis"],
-	"yaml.schemas": {
-		"./.vscode/projects.schema.json": "/src/**/projects/**/*.{svx,md,yaml}"
-	}
+	"cSpell.words": ["architecting", "mdsvex", "numpy", "unovis"],
 }

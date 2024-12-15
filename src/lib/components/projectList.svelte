@@ -29,12 +29,8 @@
 				<a
 					href={"/projects"}
 					class="underline decoration-primary text-primary text-md flex gap-2 justify-center"
+					style="transition: inherit"
 					>See full project list
-					<!-- <Icon
-						icon="mdi:external-link"
-						width="24"
-						height="24"
-					/> -->
 				</a>
 			</div>
 		{/snippet}

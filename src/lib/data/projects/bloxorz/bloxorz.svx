@@ -17,6 +17,8 @@ libraries:
     - PyInstaller
 tools:
     - Git
+other:
+    - Collaborative
 
 github: "https://github.com/owenshadburne/Bloxorz"
 ---

@@ -1,12 +1,15 @@
 import type { Category } from "$lib/scripts/ssg/types";
 
 export const summaries: Record<Category, string> = {
-	software: "Software developer description.",
-	"full-stack": "Full-stack developer description.",
-	web: "Web developer description.",
-	mobile: "Mobile developer description.",
-	desktop: "Desktop developer description.",
-	cloud: "Cloud engineer description.",
-	game: "Game developer description.",
-	other: "Engineer description.",
+	software:
+		"From beautifully responsive websites to innovative apps to award-winning games — I don't just create software, I create experiences that leave a lasting impact. I'm constantly growing, learning, and refining my skills to create better experiences. No matter the platform or medium, I pour my passion and expertise into every project, striving to go above and beyond in everything I create.",
+	"full-stack":
+		"I don't just create standalone software — I build cohesive ecosystems. By combining my expertise in cloud engineering, mobile apps, and websites, I deliver integrated solutions that function seamlessly as a unified whole. Crafting beautifully interconnected experiences across platforms is my specialty; a smooth and amazing user experience is just a natural side effect.",
+	web: "I bring to life creatively beautiful and functional websites that flawlessly blend aesthetic appeal with seamless user experience. From responsive layouts to intuitive navigation, I focus on crafting websites that not only look stunning but also perform like a dream. I plan every detail down to the pixel but never sacrifice reliable and engaging experiences to stand out in the digital landscape.",
+	mobile: "I design purpose-driven mobile apps that tackle even the toughest challenges with elegance and precision. By focusing on user needs and seamless functionality, I create solutions that are not only effective but also intuitive and enjoyable to use. Every app I develop is crafted to make a meaningful impact, delivering innovation and value in every aspect.",
+	desktop:
+		"Programs are more than just flashy marketing — they're the foundation for the innovative products of tomorrow. I take pride in building software that isn't just functional but crafted with care and precision. I create programs that are cleanly written, thoroughly documented, highly efficient, and designed for longevity. With every project, I strive to create solutions that are as elegant behind the scenes as they are impactful in their application.",
+	cloud: "From authentication to databases and virtual machines, I practically live in the cloud. I specialize in designing efficient, cost-effective, and user-friendly solutions that seamlessly integrate with modern workflows. Whether it's architecting scalable infrastructure, optimizing performance, or ensuring long-term reliability, I consider every essential facet of DevOps. I craft robust systems tailored to any application or purpose — solutions built not just for today, but to stand the test of time.",
+	game: "Ever since childhood, I've been enamored by video games. They sparked my imagination, inspired me to create, and opened the door to endless possibilities. My goal is to craft games that do the same for others — igniting a passion for building, exploring, and imagining worlds beyond our own. Through my work, I aim to share the joy of creativity and inspire others to embrace and spread their own.",
+	other: "Before anything else, I'm an engineer at heart. Driven by my passion for problem solving and my love of learning, I build creative solutions for difficult problems. I'm always striving to make a meaningful impact in my community — whether by mentoring others, tackling complex challenges, or developing innovative projects, I bring a professional yet human touch to everything I do.",
 };
