@@ -3,7 +3,7 @@
 	import NumeratedTagList from "./numeratedTagList.svelte";
 
 	const {
-		category,
+		categories,
 		languages,
 		frameworks,
 		libraries,
@@ -15,11 +15,6 @@
 		labeled?: boolean;
 	} = $props();
 
-	let cat: Record<string, number> = {};
-	if (category) {
-		cat[category as string] = 0;
-	}
-
 	function trans(list?: string[]): Record<string, number> {
 		if (list === undefined) {
 			return {};
@@ -30,7 +25,7 @@
 </script>
 
 <NumeratedTagList
-	category={cat}
+	categories={trans(categories)}
 	languages={trans(languages)}
 	frameworks={trans(frameworks)}
 	libraries={trans(libraries)}

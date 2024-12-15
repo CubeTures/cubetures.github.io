@@ -10,13 +10,20 @@
 		Item: Snippet<[T]>;
 		Separator?: Snippet<[Position, number]>;
 		limit?: number;
-		LimitReachedComponent?: Component;
+		LimitReachedComponent?: Snippet;
+		NoItemsComponent?: Snippet;
 	}
 
-	const { data, limit, Item, Separator, LimitReachedComponent }: Props =
-		$props();
+	const {
+		data,
+		limit,
+		Item,
+		Separator,
+		LimitReachedComponent,
+		NoItemsComponent,
+	}: Props = $props();
 
-	let limitReached: boolean = $state(
+	let limitReached: boolean = $derived(
 		limit !== undefined && data.length > limit
 	);
 </script>
@@ -27,7 +34,11 @@
 	{/if}
 {/snippet}
 
-{@render Sep("first", 0)}
+{#if data.length > 0}
+	{@render Sep("first", 0)}
+{:else if NoItemsComponent}
+	{@render NoItemsComponent()}
+{/if}
 
 {#each data as d, index}
 	{#if limit}
@@ -44,5 +55,5 @@
 {/each}
 
 {#if limitReached && LimitReachedComponent}
-	<LimitReachedComponent />
+	{@render LimitReachedComponent()}
 {/if}

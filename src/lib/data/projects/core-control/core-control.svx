@@ -9,7 +9,8 @@ desc: "An arcade-style 2D game about possessing your enemies that placed 2nd in 
 date: "12-1-2021"
 pinned: false
 
-category: game
+categories: 
+    - game
 languages:
     - C#
 frameworks:

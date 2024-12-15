@@ -1,22 +1,26 @@
 <script lang="ts">
+	import { filters } from "$lib/hooks/state.svelte";
+	import { filterData, filterList, flattenData } from "$lib/scripts/filters";
 	import type {
 		ExperienceData,
 		Groups,
 		ProjectData,
 		Tags,
 	} from "$lib/scripts/ssg/types";
-	import type { PageData } from "../../routes/$types";
 	import NumeratedTagList from "./numeratedTagList.svelte";
 
+	type Data = {
+		experience?: ExperienceData[];
+		projects?: ProjectData[];
+	};
+
 	interface Props {
-		data: {
-			experience?: ExperienceData[];
-			projects?: ProjectData[];
-		};
+		data: Data;
 		group?: Groups;
 	}
 
 	const { data, group }: Props = $props();
+	let filteredData = $derived(filterData(filters.category, data));
 
 	type Section = Exclude<keyof Tags, "category">;
 	const sections: Section[] = [
@@ -28,23 +32,23 @@
 		"other",
 	];
 
-	const calculated = calculate();
+	const calculated = $derived(calculate(filteredData));
 
-	function calculate(): Record<Section, Record<string, number>> {
+	function calculate(data: Data): Record<Section, Record<string, number>> {
 		let result: any = {};
 
 		for (const section of sections) {
-			result[section] = getList(section);
+			result[section] = getList(data, section);
 		}
 
 		return result;
 	}
 
-	function getList(section: Section): Record<string, number> {
+	function getList(data: Data, section: Section): Record<string, number> {
 		let result: Record<string, number> = {};
 
 		for (const [grp, list] of Object.entries(data)) {
-			if (group && grp !== grp) {
+			if (group && grp !== group) {
 				continue;
 			}
 

@@ -5,7 +5,8 @@ id: example
 name: Example
 desc: An example project for testing my static site generation.
 date: "12-10-2024"
-category: web
+categories:
+    - web
 languages:
     - Go
     - TypeScript

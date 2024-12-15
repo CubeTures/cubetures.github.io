@@ -11,9 +11,6 @@ import type {
 let markdown: MarkdownImport | undefined;
 let images: ImagesImport | undefined;
 
-// change structure
-// import all markdown
-// then segregate them by directory
 function importMarkdown() {
 	if (markdown === undefined) {
 		markdown = {
@@ -31,7 +28,7 @@ function importMarkdown() {
 
 		for (const [path, project] of Object.entries(projects)) {
 			const group = getGroupName(path);
-			const id = getFileName(path, { ".md": "", ".svx": "" });
+			const id = getFileName(path, true);
 
 			if (markdown[group] === undefined) {
 				markdown[group] = {};
@@ -61,7 +58,7 @@ function importImages() {
 		for (const [path, glob] of Object.entries(globs)) {
 			const group = getGroupName(path);
 			const id = getDirName(path);
-			const name = getFileName(path);
+			const name = getFileName(path, true);
 
 			if (images[group] === undefined) {
 				images[group] = {};
@@ -69,6 +66,12 @@ function importImages() {
 
 			if (images[group][id] === undefined) {
 				images[group][id] = {};
+			}
+
+			if (images[group][id][name]) {
+				console.error(
+					`There are two images with the name ${name} in ${group}/${id}. Please change one.`
+				);
 			}
 
 			images[group][id][name] = glob.default;

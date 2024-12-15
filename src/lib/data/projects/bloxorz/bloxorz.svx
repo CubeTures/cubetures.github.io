@@ -9,7 +9,8 @@ desc: A 2D recreation of the flash game Bloxorz.
 date: 11-1-2021
 pinned: false
 
-category: game
+categories: 
+    - game
 languages:
     - Python
 libraries:

@@ -9,7 +9,7 @@ desc:
 date:
 pinned:
 
-category:
+categories:
 languages:
 frameworks:
 libraries:

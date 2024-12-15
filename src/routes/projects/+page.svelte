@@ -15,10 +15,8 @@
 	/>
 </svelte:head>
 
-<SectionHeader title="Projects" />
 <ProjectList projects={data.projects} />
 
-<SectionHeader title="Skills" />
 <SkillList
 	{data}
 	group={"projects"}

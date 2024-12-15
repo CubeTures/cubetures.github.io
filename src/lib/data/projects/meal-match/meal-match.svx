@@ -9,7 +9,9 @@ desc: "A Tinder-like web app engineered to solve the impossible task of finding 
 date: "2-1-2024"
 pinned: false
 
-category: full-stack
+categories: 
+    - web
+    - cloud
 languages:
     - JavaScript
     - HTML

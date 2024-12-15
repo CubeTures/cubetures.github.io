@@ -9,7 +9,8 @@ desc: "A fast-paced 2D arcade game about juggling speed and fragility."
 date: 6-11-2024
 pinned: false
 
-category: game
+categories: 
+    - game
 languages:
     - C#
 frameworks:

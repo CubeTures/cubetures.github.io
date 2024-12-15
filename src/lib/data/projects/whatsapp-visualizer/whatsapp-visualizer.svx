@@ -9,7 +9,8 @@ desc: "A data analysis and visualization tool for WhatsApp chats."
 date: "12-21-2024"
 pinned: true
 
-category: web
+categories: 
+    - web
 languages:
     - Go
     - WebAssembly

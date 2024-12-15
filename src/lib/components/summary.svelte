@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as Select from "$lib/components/ui/select/index.js";
+	import { toast } from "svelte-sonner";
 	import { summaries } from "$lib/data/summary";
 	import { filters } from "$lib/hooks/state.svelte";
 	import type { Category } from "$lib/scripts/ssg/types";
@@ -53,6 +54,7 @@
 
 	function set(value: Category) {
 		filters.category = value;
+		toast.success(`Filtered results to only "${options.find((op) => op.value == value)?.label}"`)
 	}
 
 	function get(): Category {

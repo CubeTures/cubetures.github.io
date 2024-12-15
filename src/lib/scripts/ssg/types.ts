@@ -8,15 +8,15 @@ export interface MarkdownContent {
 	content: any;
 }
 
-export interface MarkdownMetadata {
+export type MarkdownMetadata = {
 	group: Groups;
 	id: string;
 	color: string;
 	visible?: boolean; // not published
 	exclude?: boolean; // not counted
-}
+} & Tags;
 
-export interface ExperienceMetadata extends MarkdownMetadata, Tags {
+export interface ExperienceMetadata extends MarkdownMetadata {
 	start: Date;
 	end?: Date;
 	position: string;
@@ -29,7 +29,7 @@ export interface ExperienceData extends ExperienceMetadata {
 	href: string;
 }
 
-export interface ProjectMetadata extends MarkdownMetadata, Tags, ProjectLinks {
+export interface ProjectMetadata extends MarkdownMetadata, ProjectLinks {
 	name: string;
 	desc: string;
 	date: Date;
@@ -56,7 +56,7 @@ export interface Tags {
 	 *			Mobile
 	 *			Cloud
 	 */
-	category: Exclude<Category, "software">;
+	categories: Exclude<Category, "software" | "full-stack">[];
 
 	// java, go, haskell
 	languages?: string[];
@@ -78,7 +78,7 @@ export interface Tags {
 }
 
 export interface NumeratedTags {
-	category?: Record<string, number>;
+	categories?: Record<string, number>;
 	languages?: Record<string, number>;
 	frameworks?: Record<string, number>;
 	libraries?: Record<string, number>;
@@ -96,6 +96,17 @@ export type Category =
 	| "cloud"
 	| "game"
 	| "other";
+
+export const categories: Category[] = [
+	"software",
+	"full-stack",
+	"web",
+	"mobile",
+	"desktop",
+	"cloud",
+	"game",
+	"other",
+];
 
 export interface ProjectLinks {
 	github?: string;

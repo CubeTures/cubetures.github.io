@@ -4,11 +4,6 @@
 
 ## Priority 1
 
--   Thumbnail is the ${id}.png
--   Redo of category system
-    -   Only leaves can be tags
-    -   Instead of "full-stack", be more specific with what is used (e.g. web, cloud)
--   Fragment system for auto filtering
 -   Sorting / filtering system
     -   Highlight tags that are selected
     -   Popup that is just the skills section

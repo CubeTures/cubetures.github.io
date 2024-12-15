@@ -15,10 +15,8 @@
 	/>
 </svelte:head>
 
-<SectionHeader title="Experience" />
 <ExperienceList experience={data.experience} />
 
-<SectionHeader title="Skills" />
 <SkillList
 	{data}
 	group={"experience"}

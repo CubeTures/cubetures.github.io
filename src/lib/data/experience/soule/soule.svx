@@ -15,7 +15,9 @@ desc:
     - "Designed multiple UI iterations with Figma and Expo, earning praise from an ex-tinder employee on the final design."
     - "Coded a comprehensive dating app with React Native and Expo, featuring robust authentication, matchmaking, messaging, and customization features."
 
-category: "full-stack"
+categories:
+    - mobile
+    - cloud
 languages:
     - TypeScript
 frameworks:

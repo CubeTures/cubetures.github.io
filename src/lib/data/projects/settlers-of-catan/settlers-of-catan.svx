@@ -9,7 +9,8 @@ desc: "A faithful reaction of the popular board game Settlers of Catan using Jav
 date: 5-1-2022
 pinned: false
 
-category: game
+categories: 
+    - game
 languages:
     - Java
 libraries:

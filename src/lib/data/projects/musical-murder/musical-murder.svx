@@ -9,7 +9,8 @@ desc: "A rhythm-based action game about assassinating the leader of a disco club
 date: "11-23-2024"
 pinned: false
 
-category: game
+categories: 
+    - game
 languages:
     - C#
 frameworks:

@@ -1,7 +1,12 @@
 <script lang="ts">
+	import { filters } from "$lib/hooks/state.svelte";
+	import { filterList } from "$lib/scripts/filters";
+	import { settings } from "$lib/scripts/ssg/settings";
 	import type { ExperienceData } from "$lib/scripts/ssg/types";
 	import ExperienceCard from "./experienceCard.svelte";
+	import GridBlock from "./gridBlock.svelte";
 	import Limited from "./limited.svelte";
+	import SectionHeader from "./sectionHeader.svelte";
 
 	interface Props {
 		experience: ExperienceData[];
@@ -9,11 +14,21 @@
 	}
 
 	const { experience, limit }: Props = $props();
+
+	const data = $derived.by(() => {
+		if (settings.filters.experienceFiltered) {
+			return filterList(filters.category, experience);
+		}
+
+		return experience;
+	});
 </script>
+
+<SectionHeader title="Experience" />
 
 <div class="flex flex-col">
 	<Limited
-		data={experience}
+		{data}
 		{limit}
 	>
 		{#snippet Item(exp: ExperienceData)}
@@ -41,17 +56,19 @@
 			{/if}
 		{/snippet}
 		{#snippet LimitReachedComponent()}
-			<div
-				class="border border-border rounded-lg p-6 text-center sm:col-span-2"
-				style="transition: all var(--transition)"
-			>
+			<GridBlock>
 				<a
 					href={"/experience"}
 					class="underline decoration-primary text-primary text-md flex gap-2 justify-center"
 					style="transition: inherit"
 					>See full experience list
 				</a>
-			</div>
+			</GridBlock>
+		{/snippet}
+		{#snippet NoItemsComponent()}
+			<GridBlock>
+				<p>No experience exists under the current filters.</p>
+			</GridBlock>
 		{/snippet}
 	</Limited>
 </div>

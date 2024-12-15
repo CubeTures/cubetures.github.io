@@ -2,12 +2,17 @@ import type { Groups } from "./types";
 
 export function getFileName(
 	path: string,
+	removeExtensions?: boolean,
 	replaceExtensions?: Record<string, string>
 ): string {
 	let name = path.split("/").at(-1);
 
 	if (name === undefined) {
 		throw new Error(`Failed to get file name of invalid path ${path}`);
+	}
+
+	if (removeExtensions) {
+		name = name.substring(0, name.indexOf("."));
 	}
 
 	if (replaceExtensions !== undefined) {

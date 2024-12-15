@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Toaster } from "$lib/components/ui/sonner/index.js";
 	import Container from "$lib/components/container.svelte";
 	import "../app.css";
 	import "$lib/styles/tilter.css";
@@ -17,3 +18,5 @@
 <Container>
 	{@render children()}
 </Container>
+
+<Toaster richColors />

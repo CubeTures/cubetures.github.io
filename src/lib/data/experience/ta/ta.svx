@@ -13,7 +13,8 @@ desc:
     - "Lead the instruction of an Honors Data Structures in C++ lab twice a week."
     - "Organize bi-weekly office hours to assist students in their study of Data Structures."
 
-category: other
+categories: 
+    - other
 languages:
     - C++
 other:

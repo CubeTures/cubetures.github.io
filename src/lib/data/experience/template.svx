@@ -11,7 +11,7 @@ company:
 location:
 desc:
 
-category:
+categories:
 languages:
 frameworks:
 libraries:

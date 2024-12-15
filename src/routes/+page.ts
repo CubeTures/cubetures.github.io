@@ -4,7 +4,7 @@ import type { PageLoad } from "./$types";
 
 export const prerender = true;
 
-export const load: PageLoad = ({ params }) => {
+export const load: PageLoad = ({ url }) => {
 	return {
 		experience: getExperienceList(),
 		projects: getProjectList(),

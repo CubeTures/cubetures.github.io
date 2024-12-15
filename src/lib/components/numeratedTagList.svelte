@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { capitalize } from "$lib/scripts/helper";
 	import type { NumeratedTags, Tags } from "$lib/scripts/ssg/types";
+	import SectionHeader from "./sectionHeader.svelte";
 	import Tag from "./tag.svelte";
 
 	const {
-		category,
+		categories,
 		languages,
 		frameworks,
 		libraries,
@@ -40,7 +41,7 @@
 
 	function isLimited(limit: number) {
 		const len =
-			(category ? Object.keys(category).length : 0) +
+			(categories ? Object.keys(categories).length : 0) +
 			(languages ? Object.keys(languages).length : 0) +
 			(frameworks ? Object.keys(frameworks).length : 0) +
 			(libraries ? Object.keys(libraries).length : 0) +
@@ -92,22 +93,29 @@
 	let expanded = $state(false);
 
 	//#region limited
-	const lCategory = $derived(setLimited(expanded, limit, category));
+	const lCategory = $derived(setLimited(expanded, limit, categories));
 	const lLanguages = $derived(
-		setLimited(expanded, limit, languages, category)
+		setLimited(expanded, limit, languages, categories)
 	);
 	const lFrameworks = $derived(
-		setLimited(expanded, limit, frameworks, category, languages)
+		setLimited(expanded, limit, frameworks, categories, languages)
 	);
 	const lLibraries = $derived(
-		setLimited(expanded, limit, libraries, category, languages, frameworks)
+		setLimited(
+			expanded,
+			limit,
+			libraries,
+			categories,
+			languages,
+			frameworks
+		)
 	);
 	const lPlatforms = $derived(
 		setLimited(
 			expanded,
 			limit,
 			platforms,
-			category,
+			categories,
 			languages,
 			frameworks,
 			libraries
@@ -118,7 +126,7 @@
 			expanded,
 			limit,
 			tools,
-			category,
+			categories,
 			languages,
 			frameworks,
 			libraries,
@@ -130,7 +138,7 @@
 			expanded,
 			limit,
 			other,
-			category,
+			categories,
 			languages,
 			frameworks,
 			libraries,
@@ -169,8 +177,12 @@
 	{/if}
 {/snippet}
 
+{#if labeled}
+	<SectionHeader title="Skills" />
+{/if}
+
 <div class="flex flex-wrap {labeled ? 'flex-col' : ''} gap-4">
-	{@render Sec("category", lCategory)}
+	{@render Sec("categories", lCategory)}
 	{@render Sec("languages", lLanguages)}
 	{@render Sec("frameworks", lFrameworks)}
 	{@render Sec("libraries", lLibraries)}

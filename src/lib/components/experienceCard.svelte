@@ -56,7 +56,7 @@
 
 {#snippet Desc()}
 	{#if Array.isArray(desc) && desc.length > 1}
-		<ul class="list-disc ml-6">
+		<ul class="list-disc sm:ml-6">
 			{#each desc as d}
 				<li>{d}</li>
 			{/each}

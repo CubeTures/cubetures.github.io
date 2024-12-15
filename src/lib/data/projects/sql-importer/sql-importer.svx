@@ -9,7 +9,8 @@ desc: "A lightweight Python program for converting any json, csv, or xml file in
 date: 10-1-2022
 pinned: false
 
-category: desktop
+categories: 
+    - desktop
 languages:
     - Python
     - SQL

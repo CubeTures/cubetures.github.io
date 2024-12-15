@@ -1,14 +1,7 @@
-import type { Groups } from "./types";
-
-type Settings = Record<
-	Groups,
-	{
-		tilt: boolean;
-		markdownLinks: boolean;
-	}
->;
-
-export const settings: Settings = {
+export const settings = {
+	filters: {
+		experienceFiltered: false,
+	},
 	experience: {
 		tilt: false,
 		markdownLinks: false,

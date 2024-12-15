@@ -9,7 +9,8 @@ desc: "An open source Syntax Highlighter for the toy assembly language y86."
 date: "12-1-2024"
 pinned: false
 
-category: desktop
+categories: 
+    - other
 languages:
     - x86 Assembly
 other:

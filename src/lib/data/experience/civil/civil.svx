@@ -11,7 +11,8 @@ company: Austin Civil Engineering
 location: Austin, TX
 desc: "Composed a new applicant exam with various questions about civil engineering, city planning, mathematics, and emotional intelligence and provided a presentation on the revision to the company of 10 employees."
 
-category: other
+categories: 
+   - other
 other:
     - Mathematics
     - QA

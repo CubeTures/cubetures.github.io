@@ -7,6 +7,7 @@
 	import { settings } from "$lib/scripts/ssg/settings";
 
 	const {
+		id,
 		name,
 		desc,
 		date,
@@ -19,7 +20,7 @@
 		...tags
 	}: ProjectData = $props();
 
-	const thumbnail = Object.values(images)[0];
+	const thumbnail = $derived(images[id]);
 
 	const tilt = settings.projects.tilt;
 	const read = settings.projects.markdownLinks;
@@ -46,7 +47,7 @@
 		>
 			<img
 				class="w-full max-h-48 md:max-h-64 object-contain rounded-lg"
-				src={thumbnail}
+				src={images[id]}
 				alt={`${name} screenshot`}
 			/>
 		</a>
@@ -72,10 +73,10 @@
 			/>
 			<div class="grow self-start text-left">
 				{#if read}
-				<a {href}>{name}</a>
-			{:else}
-				{name}
-			{/if}
+					<a {href}>{name}</a>
+				{:else}
+					{name}
+				{/if}
 			</div>
 		</Card.Title>
 		<Card.Description>{desc}</Card.Description>
