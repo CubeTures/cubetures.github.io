@@ -6,8 +6,6 @@
 
 -   Summaries
 -   Photos for projects
--   Experience and project pages
-    -   See full list button
 
 ## Priority 2
 
@@ -32,6 +30,10 @@
 # Stretch
 
 -   Table of contents for markdown pages (show different headers)
+-   Search bar
+    -   Icon in nav bar
+    -   Combobox
+    -   Shows the visible items on the page as immediately selectable, but you can begin typing to see results from the full repository
 -   Better responsive design
     -   Particularly with the experience (it takes up too much horizontal space)
     -   On phones, the item in the center of the screen is colored (when an item gets 1/3 to the top, it becomes "selected")

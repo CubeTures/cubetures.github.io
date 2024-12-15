@@ -1,10 +1,22 @@
 <script lang="ts">
-	import type { Tags } from "$lib/scripts/ssg/types";
+	import type {
+		ExperienceData,
+		Groups,
+		ProjectData,
+		Tags,
+	} from "$lib/scripts/ssg/types";
 	import type { PageData } from "../../routes/$types";
 	import NumeratedTagList from "./numeratedTagList.svelte";
-	import TagList from "./tagList.svelte";
 
-	const { data }: { data: PageData } = $props();
+	interface Props {
+		data: {
+			experience?: ExperienceData[];
+			projects?: ProjectData[];
+		};
+		group?: Groups;
+	}
+
+	const { data, group }: Props = $props();
 
 	type Section = Exclude<keyof Tags, "category">;
 	const sections: Section[] = [
@@ -31,7 +43,11 @@
 	function getList(section: Section): Record<string, number> {
 		let result: Record<string, number> = {};
 
-		for (const [category, list] of Object.entries(data)) {
+		for (const [grp, list] of Object.entries(data)) {
+			if (group && grp !== grp) {
+				continue;
+			}
+
 			for (const entry of list) {
 				if (entry.exclude === true) {
 					continue;

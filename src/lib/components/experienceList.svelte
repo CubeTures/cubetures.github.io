@@ -40,5 +40,17 @@
 				></div>
 			{/if}
 		{/snippet}
+		{#snippet LimitReachedComponent()}
+			<div
+				class="border border-border rounded-lg p-6 text-center sm:col-span-2"
+				style="transition: all var(--transition)"
+			>
+				<a
+					href={"/experience"}
+					class="underline decoration-primary text-primary text-md flex gap-2 justify-center"
+					>See full experience list
+				</a>
+			</div>
+		{/snippet}
 	</Limited>
 </div>
